@@ -1,13 +1,13 @@
 {
   "name": "start-sass",
-  "version": "1.1.9",
+  "version": "1.2.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/jamesvanwaza/start-sass"
   },
   "devDependencies": {
-    "@fortawesome/fontawesome-free": "^5.8.1",
-    "autoprefixer": "^9.5.0",
+    "@fortawesome/fontawesome-free": "^5.9.0",
+    "autoprefixer": "^9.6.0",
     "font-awesome": "^4.7.0",
     "grunt-contrib-jshint": "^2.1.0",
     "grunt-contrib-watch": "^1.1.0",
@@ -17,13 +17,10 @@
     "grunt-sass": "^3.0.2",
     "jshint": "^2.10.2",
     "jshint-stylish": "^2.2.1",
-    "load-grunt-tasks": "^4.0.0",
-    "node-sass": "^4.11.0",
-    "postcss": "^7.0.14",
     "susy": "^3.0.1"
   },
   "scripts": {
-    "build": "webpack --build"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "description": "Starting a SASS Project",
   "bugs": {
@@ -31,16 +28,15 @@
   },
   "homepage": "https://github.com/jamesvanwaza/start-sass#readme",
   "main": "index.php, gruntfile.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "keywords": [
     "Boilerplate"
   ],
   "author": "JamesVanWaza <info@dosbranding.com>",
   "license": "MIT",
   "dependencies": {
-    "grunt": "^1.0.4",
-    "jquery": "^3.2.1"
+    "grunt": "^1.0.4"
+  },
+  "peerDependencies": {
+    "jquery": "^3.4.1"
   }
 }
