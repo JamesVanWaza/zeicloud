@@ -1,2 +1,4 @@
 node_modules/
 scss/
+yarn.lock
+.DS_Store
