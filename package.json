@@ -1,20 +1,19 @@
 {
   "name": "start-sass",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "repository": {
     "type": "git",
     "url": "https://github.com/jamesvanwaza/start-sass"
   },
   "devDependencies": {
-    "@fortawesome/fontawesome-free": "^5.9.0",
-    "autoprefixer": "^9.6.0",
+    "@fortawesome/fontawesome-free": "^5.10.2",
+    "autoprefixer": "^9.6.1",
     "font-awesome": "^4.7.0",
     "grunt-contrib-jshint": "^2.1.0",
     "grunt-contrib-watch": "^1.1.0",
     "grunt-force-task": "^2.0.0",
     "grunt-openport": "^1.0.0",
     "grunt-postcss": "^0.9.0",
-    "grunt-sass": "^3.0.2",
     "jshint": "^2.10.2",
     "jshint-stylish": "^2.2.1",
     "susy": "^3.0.1"
