@@ -6,7 +6,7 @@
     "url": "https://github.com/jamesvanwaza/start-sass"
   },
   "devDependencies": {
-    "@fortawesome/fontawesome-free": "^5.10.2",
+    "@fortawesome/fontawesome-free": "^5.11.2",
     "autoprefixer": "^9.6.1",
     "font-awesome": "^4.7.0",
     "grunt-contrib-jshint": "^2.1.0",
