@@ -1,12 +1,5 @@
 
-1. Node
-
-    a. jQuery
-    
-    b. Font Awesome
-    
-2. Grunt
-3. NPM
-4. Google Fonts
+1. Webpack
+2. Google Fonts
 
 ## TO DO
