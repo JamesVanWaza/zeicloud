@@ -1,13 +1,13 @@
 {
   "name": "start-sass",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "repository": {
     "type": "git",
     "url": "https://github.com/jamesvanwaza/start-sass"
   },
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^5.11.2",
-    "autoprefixer": "^9.7.1",
+    "autoprefixer": "^9.7.2",
     "grunt-contrib-jshint": "^2.1.0",
     "grunt-contrib-watch": "^1.1.0",
     "grunt-force-task": "^2.0.0",
