@@ -1,14 +1,17 @@
 {
   "name": "start-sass",
-  "version": "1.3.1",
-  "repository": "https://github.com/jamesvanwaza/start-sass",
+  "version": "1.3.2",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jamesvanwaza/start-sass.git"
+  },
   "devDependencies": {
-    "@fortawesome/fontawesome-free": "^5.13.0",
-    "autoprefixer": "^9.8.0",
+    "@fortawesome/fontawesome-free": "^5.14.0",
+    "autoprefixer": "^9.8.6",
     "grunt-contrib-watch": "^1.1.0",
     "grunt-force-task": "^2.0.0",
     "jshint-stylish": "^2.2.1",
-    "susy": "^3.0.1"
+    "susy": "^3.0.6"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
