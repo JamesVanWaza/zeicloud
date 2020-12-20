@@ -1,6 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const webpack = require("webpack"); // to access built-in plugins
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 module.exports = {
     mode: 'development',
@@ -55,6 +55,10 @@ module.exports = {
             title: 'Responsive Navigation',
             filename: 'index.html',
             template: './src/html-templates/index-template.html'
+        }),
+        // Favicon
+        new FaviconsWebpackPlugin({
+            logo: './src/images/W-Favicon002@4x.png'
         })
     ]
 };
