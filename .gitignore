@@ -8,3 +8,4 @@ public/*.eot
 public/*.svg
 public/*.woff2
 public/*.ttf
+public/main.js
