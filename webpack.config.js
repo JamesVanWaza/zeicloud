@@ -1,6 +1,6 @@
 const path = require("path");
-// const HtmlWebpackPlugin = require('html-webpack-plugin');
-// const webpack = require("webpack"); // to access built-in plugins
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require("webpack"); // to access built-in plugins
 
 module.exports = {
     mode: 'development',
@@ -12,7 +12,7 @@ module.exports = {
     devServer: {
         open: 'Google Chrome',
         contentBase: path.join(__dirname, "public"),
-        port: 9010
+        port: 9009
     },
     module: {
         rules: [{
@@ -48,5 +48,13 @@ module.exports = {
                 use: 'file-loader',
             }
         ]
-    }
+    },
+    plugins: [
+        // Home Page
+        new HtmlWebpackPlugin({
+            title: 'Responsive Navigation',
+            filename: 'index.html',
+            template: './src/html-templates/index-template.html'
+        })
+    ]
 };
