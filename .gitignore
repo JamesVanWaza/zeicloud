@@ -3,3 +3,8 @@ scss/
 yarn.lock
 .DS_Store
 mysqli-connect.php
+public/*.woff
+public/*.eot
+public/*.svg
+public/*.woff2
+public/*.ttf
