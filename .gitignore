@@ -8,3 +8,10 @@ public/*.svg
 public/*.woff2
 public/*.ttf
 public/main.js
+.firebase/hosting.cHVibGlj.cache
+.firebaserc
+firebase.json
+firestore.indexes.json
+firestore.rules
+functions/.eslintrc.json
+storage.rules
