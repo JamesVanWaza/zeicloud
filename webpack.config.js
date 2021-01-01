@@ -56,6 +56,11 @@ module.exports = {
             filename: 'index.html',
             template: './src/html-templates/index-template.html'
         }),
+        new HtmlWebpackPlugin({
+            title: 'OH OH',
+            filename: '404.html',
+            template: './src/html-templates/404-template.html'
+        }),
         // Favicon
         new FaviconsWebpackPlugin({
             logo: './src/images/S-FaviconBackgroundColor@4x.png'
