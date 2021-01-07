@@ -1,6 +1,6 @@
 {
   "name": "start-sass",
-  "version": "2.7.6",
+  "version": "2.7.7",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jamesvanwaza/start-sass.git"
@@ -11,14 +11,14 @@
     "extract-loader": "^5.1.0",
     "favicons-webpack-plugin": "^4.2.0",
     "file-loader": "^6.2.0",
-    "html-webpack-plugin": "^4.5.0",
+    "html-webpack-plugin": "^4.5.1",
     "node-sass": "^5.0.0",
     "sass-loader": "^10.1.0",
     "style-loader": "^2.0.0",
     "url-loader": "^4.1.1",
-    "webpack": "^5.11.0",
-    "webpack-cli": "^4.3.0",
-    "webpack-dev-server": "^3.11.0"
+    "webpack": "^5.11.1",
+    "webpack-cli": "^4.3.1",
+    "webpack-dev-server": "^3.11.1"
   },
   "scripts": {
     "build": "webpack -w",
