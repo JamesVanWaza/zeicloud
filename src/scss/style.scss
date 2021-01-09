@@ -58,7 +58,7 @@ h6 {
 }
 
 nav {
-    background: #222;
+    background: $irisblue;
     padding: 5px 20px;
 }
 
@@ -150,8 +150,8 @@ a:hover {
     }
     .button a {
         padding: 7.5px 15px;
-        background: teal;
-        border: 1px #006d6d solid;
+        background: $royalblue;
+        border: 1px invert($color: $white) solid;
     }
     .button.secondary a {
         background: transparent;
@@ -200,7 +200,7 @@ a:hover {
 /** Basic Styling */
 
 footer {
-    background-color: teal;
+    background-color: $irisblue;
     text-align: center;
     color: white;
 }
