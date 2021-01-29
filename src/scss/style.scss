@@ -60,6 +60,9 @@ h6 {
 nav {
     background: $royalblue;
     padding: 5px 20px;
+    a {
+        font-size: 20px;
+    }
 }
 
 ul {
@@ -203,4 +206,5 @@ footer {
     background-color: $royalblue;
     text-align: center;
     color: white;
+    font-size: 20px;
 }
