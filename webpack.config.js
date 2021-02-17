@@ -61,6 +61,16 @@ module.exports = {
             filename: '404.html',
             template: './src/html-templates/404-template.html'
         }),
+        new HtmlWebpackPlugin({
+            title: 'OH OH',
+            filename: 'signin.html',
+            template: './src/html-templates/signin-template.html'
+        }),
+        new HtmlWebpackPlugin({
+            title: 'OH OH',
+            filename: 'signup.html',
+            template: './src/html-templates/signup-template.html'
+        }),
         // Favicon
         new FaviconsWebpackPlugin({
             logo: './src/images/S-FaviconBackgroundColor@4x.png'
