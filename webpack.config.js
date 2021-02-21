@@ -4,7 +4,12 @@ const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 module.exports = {
     mode: 'development',
-    entry: './src/js/index.js',
+    entry: {
+        index: './src/js/index.js',
+        signin: './src/js/signin.js',
+        signup: './src/js/signup.js',
+        signout: './src/js/signout.js'
+    },
     output: {
         path: path.resolve(__dirname, "public"),
         filename: "[name].js",
@@ -62,14 +67,19 @@ module.exports = {
             template: './src/html-templates/404-template.html'
         }),
         new HtmlWebpackPlugin({
-            title: 'OH OH',
+            title: 'Sign In',
             filename: 'signin.html',
             template: './src/html-templates/signin-template.html'
         }),
         new HtmlWebpackPlugin({
-            title: 'OH OH',
+            title: 'Signup',
             filename: 'signup.html',
             template: './src/html-templates/signup-template.html'
+        }),
+        new HtmlWebpackPlugin({
+            title: 'Successful',
+            filename: 'successful.html',
+            template: './src/html-templates/successful-template.html'
         }),
         // Favicon
         new FaviconsWebpackPlugin({
