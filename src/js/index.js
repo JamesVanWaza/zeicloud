@@ -15,3 +15,7 @@ $(function() {
         }
     });
 });
+
+/** WIP trying to setup forms  */
+//const uname = document.querySelector('#uname');
+//const pword = document.querySelector('#pword');
