@@ -165,17 +165,18 @@ a:hover {
         text-decoration: none;
         background-color: $white;
         color: $blueviolet;
+        transition: ease-in 0.5s;
     }
     .button.secondary a {
         background: transparent;
         border-radius: 5px;
     }
     .button.secondary a:hover {
-        background-color: transparent;
-        color: $royalblue;
+        background-color: $royalblue;
+        color: $white;
         border-radius: 5px;
-        border: 1px solid $royalblue;
-        transform: scale(2);
+        border: 1px solid $white;
+        transition: ease-in 0.5s;
     }
     // .button:not(.secondary) a:hover {
     //     background: #006d6d;
