@@ -1,7 +1,11 @@
 /** SCSS Imports */
 
+@import 'normalize';
+@import 'algolia';
+@import 'mediaqueries';
 @import 'web-fonts';
 @import 'colors';
+@import 'buttons';
 
 /** Google Fonts */
 
@@ -58,7 +62,7 @@ h6 {
 }
 
 nav {
-    background: $royalblue;
+    background: $blueviolet;
     padding: 5px 20px;
     a {
         font-size: 20px;
@@ -94,7 +98,7 @@ a:hover {
 }
 
 .button.secondary {
-    border-bottom: 1px solid #444;
+    border: 1px solid $white;
 }
 
 
@@ -154,18 +158,29 @@ a:hover {
     .button a {
         padding: 7.5px 15px;
         background: $royalblue;
-        border: 1px invert($color: $white) solid;
-    }
-    .button.secondary a {
-        background: transparent;
+        border: 1px $white solid;
+        border-radius: 4px;
     }
     .button a:hover {
         text-decoration: none;
+        background-color: $white;
+        color: $blueviolet;
     }
-    .button:not(.secondary) a:hover {
-        background: #006d6d;
-        border-color: #005959;
+    .button.secondary a {
+        background: transparent;
+        border-radius: 5px;
     }
+    .button.secondary a:hover {
+        background-color: transparent;
+        color: $royalblue;
+        border-radius: 5px;
+        border: 1px solid $royalblue;
+        transform: scale(2);
+    }
+    // .button:not(.secondary) a:hover {
+    //     background: #006d6d;
+    //     border-color: #005959;
+    // }
     .button.secondary a:hover {
         color: #ddd;
     }
@@ -203,7 +218,7 @@ a:hover {
 /** Basic Styling */
 
 footer {
-    background-color: $royalblue;
+    background-color: $blueviolet;
     text-align: center;
     color: white;
     font-size: 20px;
