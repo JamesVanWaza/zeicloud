@@ -1,7 +1,19 @@
-.btn {}
+.btn {
+    border: 1px solid $white;
+}
 
 .btn-default {}
 
 .btn-primary {}
 
 .btn-secondary {}
+
+.btn-outline {
+    border: 1px solid $white;
+    border-radius: 4px;
+    &:hover {
+        transition: ease-in 0.3s;
+        background-color: $white;
+        color: $blueviolet;
+    }
+}
