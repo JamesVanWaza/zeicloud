@@ -19,3 +19,25 @@ $(function() {
 /** WIP trying to setup forms  */
 //const uname = document.querySelector('#uname');
 //const pword = document.querySelector('#pword');
+
+/** Footer Element */
+let footer = document.createElement("footer");
+footer.classList.add("footer");
+
+let favicon = document.createElement("i");
+favicon.classList.add(`fas.fa-copyright`);
+
+let copyright = new Date().getFullYear();
+// document.append(footer);
+// document.append(favicon);
+// document.append(copyright);
+console.log(copyright);
+
+/**
+ <footer class="footer">
+        <i class="fas fa-copyright"></i> 2020 -
+        <script>
+            document.write(new Date().getFullYear());
+        </script>
+    </footer>
+ */
