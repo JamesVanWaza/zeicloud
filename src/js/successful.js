@@ -31,23 +31,32 @@ firebase.initializeApp(firebaseConfig);
 let signupbtn = document.querySelector("#signInBtn").addEventListener('click', signInWithEmailPassword);
 //document.querySelector("#signInBtn").addEventListener('click', signUpWithEmailAndPassword);
 
-function signInWithEmailPassword() {
-    // signupbtn.addEventListener("click", e => {
-    //     e.preventDefault();
-    // });
+function authStateListener() {
+    // [START auth_state_listener]
+    firebase.auth().onAuthStateChanged((user) => {
+        if (user) {
+            // User is signed in, see docs for a list of available properties
+            // https://firebase.google.com/docs/reference/js/firebase.User
+            var uid = user.uid;
+            // ...
+        } else {
+            // User is signed out
+            // ...
+        }
+    });
+    // [END auth_state_listener]
+}
 
-    let email = document.querySelector('#mail').value;
-    let password = document.querySelector('#pword').value;
+// Sign out a user
+let signOutBtn = document.querySelector("#signOutBtn").addEventListener('click', signOut);
 
-    firebase.auth().signInWithEmailAndPassword(email, password)
-        .then((userCredential) => {
-            // Signed in 
-            // var user = userCredential.user;
-            console.log('Welcome back user');
-        })
-        .catch(e => {
-            console.log(e);
-            // var errorCode = error.code;
-            // var errorMessage = error.message;
-        });
+function signOut() {
+    // [START auth_sign_out]
+    firebase.auth().signOut().then(() => {
+        // Sign-out successful.
+        console.log('User is signed out');
+    }).catch((error) => {
+        // An error happened.
+    });
+    // [END auth_sign_out]
 }
