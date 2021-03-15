@@ -48,7 +48,8 @@ function authStateListener() {
 }
 
 // Sign out a user
-let signOutBtn = document.querySelector("#signOutBtn").addEventListener('click', signOut);
+// let signOutBtn = document.querySelector("#signOutBtn").addEventListener('click', signOut);
+document.querySelector("#signOutBtn").addEventListener('click', signOut);
 
 function signOut() {
     // [START auth_sign_out]

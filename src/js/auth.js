@@ -59,7 +59,7 @@ function authStateListener() {
 }
 
 // Gets a user's provider secifin information if signed in using UI
-let user = firebase.auth().currentUser;
+//let user = firebase.auth().currentUser;
 
 if (user != null) {
     user.providerData.forEach(function(profile) {
@@ -69,7 +69,7 @@ if (user != null) {
         console.log("  Email: " + profile.email);
         console.log("  Photo URL: " + profile.photoURL);
     });
-};
+}
 
 // Updates a user profile
 user.updateProfile({
