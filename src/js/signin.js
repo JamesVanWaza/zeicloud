@@ -128,48 +128,55 @@ citiesRef
     });
 
 // Inside the cities add the landmarks
-// citiesRef.doc('SF').collection('landmarks').doc().set({
-//     name: 'Golden Gate Bridge',
-//     type: 'bridge'
-// });
-// citiesRef.doc('SF').collection('landmarks').doc().set({
-//     name: 'Legion of Honor',
-//     type: 'museum'
-// });
-// citiesRef.doc('LA').collection('landmarks').doc().set({
-//     name: 'Griffith Park',
-//     type: 'park'
-// });
-// citiesRef.doc('LA').collection('landmarks').doc().set({
-//     name: 'The Getty',
-//     type: 'museum'
-// });
-// citiesRef.doc('DC').collection('landmarks').doc().set({
-//     name: 'Lincoln Memorial',
-//     type: 'memorial'
-// });
-// citiesRef.doc('DC').collection('landmarks').doc().set({
-//     name: 'National Air and Space Museum',
-//     type: 'museum'
-// });
-// citiesRef.doc('TOK').collection('landmarks').doc().set({
-//     name: 'Ueno Park',
-//     type: 'park'
-// });
-// citiesRef.doc('TOK').collection('landmarks').doc().set({
-//     name: 'National Museum of Nature and Science',
-//     type: 'museum'
-// });
+citiesRef.doc('SF').collection('landmarks').doc().set({
+    name: 'Golden Gate Bridge',
+    type: 'bridge'
+});
 
-// citiesRef.doc('BJ').collection('landmarks').doc().set({
-//     name: 'Jingshan Park',
-//     type: 'park'
-// });
+citiesRef.doc('SF').collection('landmarks').doc().set({
+    name: 'Legion of Honor',
+    type: 'museum'
+});
 
-// citiesRef.doc('BJ').collection('landmarks').doc().set({
-//     name: 'Beijing Ancient Observatory',
-//     type: 'museum'
-// });
+citiesRef.doc('LA').collection('landmarks').set({
+    name: 'Griffith Park',
+    type: 'park'
+});
+
+citiesRef.doc('LA').collection('landmarks').set({
+    name: 'The Getty',
+    type: 'museum'
+});
+
+citiesRef.doc('DC').collection('landmarks').set({
+    name: 'Lincoln Memorial',
+    type: 'memorial'
+});
+
+citiesRef.doc('DC').collection('landmarks').set({
+    name: 'National Air and Space Museum',
+    type: 'museum'
+});
+
+citiesRef.doc('TOK').collection('landmarks').set({
+    name: 'Ueno Park',
+    type: 'park'
+});
+
+citiesRef.doc('TOK').collection('landmarks').set({
+    name: 'National Museum of Nature and Science',
+    type: 'museum'
+});
+
+citiesRef.doc('BJ').collection('landmarks').set({
+    name: 'Jingshan Park',
+    type: 'park'
+});
+
+citiesRef.doc('BJ').collection('landmarks').set({
+    name: 'Beijing Ancient Observatory',
+    type: 'museum'
+});
 
 // Query the landmarks which are a museum
 let museums = db.collectionGroup('landmarks').where('type', '==', 'museum');
@@ -180,8 +187,6 @@ museums.get().then((querySnapshot) => {
 });
 
 // Order and limit data
-
-
 let docData = {
     stringExample: "Hello world!",
     booleanExample: true,
