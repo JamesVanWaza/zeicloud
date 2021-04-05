@@ -1,6 +1,29 @@
-.btn {
-    border: 1px solid $white;
+button {
+    font-size: 16px;
+    display: inline-block;
+    padding: 1rem 2rem;
+    margin: 0;
+    text-decoration: none;
+    background: $irisblue;
+    color: $white;
+    border-radius: 15px;
+    border: 1px solid $irisblue;
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out, transform 150ms ease;
+    &:hover,
+     :focus {
+        background: $white;
+        border-radius: 15px;
+        border: 1px solid $blueviolet;
+        color: $blueviolet;
+    }
+    // &:active {
+    //     transform: scale(1);
+    // }
 }
+
+.btn {}
 
 .btn-default {}
 
