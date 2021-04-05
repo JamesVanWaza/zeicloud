@@ -43,6 +43,10 @@ body {
     flex-direction: column;
 }
 
+button {
+    font-family: 'Inria Serif', serif;
+}
+
 .container {
     flex: 1 0 auto;
 }
@@ -250,4 +254,11 @@ input:focus:invalid {
 
 .error.active {
     padding: 0.3em;
+}
+
+
+/** Hidden Class */
+
+.hidden {
+    visibility: hidden;
 }
