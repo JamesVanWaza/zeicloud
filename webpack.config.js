@@ -15,7 +15,7 @@ module.exports = {
         filename: "[name].js",
     },
     devServer: {
-        open: 'Google Chrome',
+        open: 'Firefox',
         contentBase: path.join(__dirname, "public"),
         port: 9009
     },
