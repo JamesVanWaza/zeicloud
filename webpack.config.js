@@ -14,10 +14,15 @@ module.exports = {
         path: path.resolve(__dirname, "public"),
         filename: "[name].js",
     },
+    target: 'web',
     devServer: {
-        open: 'Firefox',
-        contentBase: path.join(__dirname, "public"),
-        port: 9009
+        open: {
+            app: 'Google Chrome'
+        },
+        watchFiles: {
+            paths: ['src/']
+        },
+        port: 2009
     },
     module: {
         rules: [{
