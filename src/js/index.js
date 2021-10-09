@@ -2,8 +2,6 @@ import '../scss/style.scss';
 
 const $ = require('jquery');
 
-$('#target').html("Hello Everyone This is jQuery!");
-
 $(function() {
     $('.toggle').on("click", function() {
         if ($(".item").hasClass("active")) {
@@ -16,28 +14,29 @@ $(function() {
     });
 });
 
-/** WIP trying to setup forms  */
-//const uname = document.querySelector('#uname');
-//const pword = document.querySelector('#pword');
+document.body.onload = footer;
 
-/** Footer Element */
-let footer = document.createElement("footer");
-footer.classList.add("footer");
+function footer() {
+    // create a new div element
+    const footerDiv = document.createElement("footer");
 
-let favicon = document.createElement("i");
-favicon.classList.add(`fas.fa-copyright`);
+    // assign it a class
+    footerDiv.classList.add("footer");
 
-let copyright = new Date().getFullYear();
-// document.append(footer);
-// document.append(favicon);
-// document.append(copyright);
-console.log(copyright);
+    // gets the current date
+    const copyright = new Date().getFullYear();
 
-/**
- <footer class="footer">
-        <i class="fas fa-copyright"></i> 2020 -
-        <script>
-            document.write(new Date().getFullYear());
-        </script>
-    </footer>
- */
+    // gets the copyright symbol
+    const favicon = document.createElement("i");
+    favicon.classList.add("fas", "fa-copyright");
+
+    const text = document.createTextNode(" 2020 " + "- " + copyright);
+
+    // add the text node to the newly created div
+    footerDiv.appendChild(favicon);
+    footerDiv.appendChild(text);
+
+    // add the newly created element and its content into the DOM
+    const newDiv = document.getElementById("div");
+    document.body.insertBefore(footerDiv, newDiv);
+}
