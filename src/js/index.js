@@ -14,6 +14,7 @@ $(function() {
     });
 });
 
+/** Footer */
 document.body.onload = footer;
 
 function footer() {
