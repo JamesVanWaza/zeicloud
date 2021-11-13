@@ -1,6 +1,10 @@
 const path = require("path");
+
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
+
+const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = {
     mode: 'development',
@@ -23,6 +27,10 @@ module.exports = {
             paths: ['src/']
         },
         port: 2009
+    },
+    optimization: {
+        minimize: true,
+        minimizer: [new TerserPlugin()]
     },
     module: {
         rules: [{

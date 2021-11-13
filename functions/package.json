@@ -1,9 +1,9 @@
 {
     "name": "start-sass-functions",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "description": "Cloud Functions for Firebase",
     "scripts": {
-        "lint": "eslint .",
+        "lint": "eslint",
         "serve": "firebase emulators:start --only functions",
         "shell": "firebase functions:shell",
         "start": "npm run shell",
@@ -14,13 +14,13 @@
         "node": "12"
     },
     "dependencies": {
-        "firebase-functions": "^3.14.1"
+        "firebase-functions": "^3.16.0"
     },
     "devDependencies": {
-        "eslint": "^7.29.0",
-        "eslint-plugin-promise": "^4.3.1",
-        "firebase-admin": "^9.10.0",
-        "firebase-functions-test": "^0.3.0"
+        "eslint": "^8.2.0",
+        "eslint-plugin-promise": "^5.1.1",
+        "firebase-admin": "^10.0.0",
+        "firebase-functions-test": "^0.3.3"
     },
     "private": true,
     "main": "index.js",

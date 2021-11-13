@@ -1,28 +1,28 @@
 {
     "name": "start-sass",
-    "version": "2.8.9",
+    "version": "2.9.0",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/jamesvanwaza/start-sass.git"
     },
     "dependencies": {
-        "firebase": "^9.1.2",
+        "firebase": "^9.4.1",
         "jquery": "^3.6.0"
     },
     "devDependencies": {
         "@fortawesome/fontawesome-free": "^5.15.4",
-        "css-loader": "^6.4.0",
+        "css-loader": "^6.5.1",
         "extract-loader": "^5.1.0",
         "favicons-webpack-plugin": "^5.0.2",
         "file-loader": "^6.2.0",
-        "html-webpack-plugin": "^5.3.1",
+        "html-webpack-plugin": "^5.5.0",
         "node-sass": "^6.0.1",
-        "sass-loader": "^12.1.0",
-        "style-loader": "^3.3.0",
+        "sass-loader": "^12.3.0",
+        "style-loader": "^3.3.1",
         "url-loader": "^4.1.1",
-        "webpack": "^5.58.1",
-        "webpack-cli": "^4.9.0",
-        "webpack-dev-server": "^4.3.1"
+        "webpack": "^5.64.0",
+        "webpack-cli": "^4.9.1",
+        "webpack-dev-server": "^4.5.0"
     },
     "scripts": {
         "build": "webpack -w",
