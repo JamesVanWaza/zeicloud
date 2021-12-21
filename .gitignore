@@ -5,9 +5,9 @@ mysqli-connect.php
 public/
 .firebase/hosting.cHVibGlj.cache
 .firebaserc
-firebase.json
 firestore.indexes.json
 firestore.rules
 functions/.eslintrc.json
 storage.rules
 
+.github/workflows/.hosting.yml.icloud
