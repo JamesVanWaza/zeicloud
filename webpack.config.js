@@ -10,9 +10,7 @@ module.exports = {
     mode: 'development',
     entry: {
         index: './src/js/index.js',
-        signin: './src/js/signin.js',
-        signup: './src/js/signup.js',
-        successful: './src/js/successful.js'
+        app: './src/js/app.js'
     },
     output: {
         path: path.resolve(__dirname, "public"),
