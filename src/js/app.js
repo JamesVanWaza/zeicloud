@@ -52,14 +52,14 @@ const db = getFirestore(app);
 //const appCheck = initializeAppCheck(app);
 
 // Emulator
-connectAuthEmulator(auth, 'http://localhost:8080');
+//connectAuthEmulator(auth, 'http://localhost:8080');
 
 /** Constants */
 const profileForm = document.querySelector('#form');
 const fname = document.querySelector('#fname');
 const btn = document.querySelector('#submit');
 const readData = document.querySelector('#readData');
-const githubBtn = document.querySelector('#githubBtn');
+//const githubBtn = document.querySelector('#githubBtn');
 
 btn.addEventListener('click', (e) => {
     e.preventDefault();
@@ -94,17 +94,17 @@ readData.addEventListener('click', (e) => {
 
 /** Setting up Auth */
 // Sign in with Github  
-githubBtn.addEventListener('click', (e) => {
-    e.preventDefault();
+// githubBtn.addEventListener('click', (e) => {
+//     e.preventDefault();
 
-    async function signInUser() {
-        // Sign in with Github
-        const provider = new GithubAuthProvider();
-        await signInWithRedirect(auth, provider);
-    }
+//     async function signInUser() {
+//         // Sign in with Github
+//         const provider = new GithubAuthProvider();
+//         await signInWithRedirect(auth, provider);
+//     }
 
-    signInUser();
-});
+//     signInUser();
+// });
 
 // Auth state change
 function initAuthStateChange() {
