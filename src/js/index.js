@@ -1,6 +1,6 @@
 import '../scss/style.scss';
 
-/** FontAwesom6 */
+/** FontAwesome 6 */
 import '@fortawesome/fontawesome-free/js/all.js';
 
 /** Navigation Menu */
