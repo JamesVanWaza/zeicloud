@@ -1,7 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 // import { getAnalytics } from "firebase/analytics";
-import { getAuth, signInWithRedirect, GithubAuthProvider, signOut, onAuthStateChanged, connectAuthEmulator } from "firebase/auth";
+import { getAuth, GithubAuthProvider, signInWithPopup } from "firebase/auth";
 import { getFirestore, collection, addDoc, getDocs } from "firebase/firestore";
 // import { getFunctions } from "firebase/functions";
 // import { getMessaging } from "firebase/messaging";
@@ -59,7 +59,7 @@ const profileForm = document.querySelector('#form');
 const fname = document.querySelector('#fname');
 const btn = document.querySelector('#submit');
 const readData = document.querySelector('#readData');
-//const githubBtn = document.querySelector('#githubBtn');
+const githubLogin = document.querySelector('#githubLogin');
 
 btn.addEventListener('click', (e) => {
     e.preventDefault();
@@ -94,17 +94,38 @@ readData.addEventListener('click', (e) => {
 
 /** Setting up Auth */
 // Sign in with Github  
-// githubBtn.addEventListener('click', (e) => {
-//     e.preventDefault();
+githubLogin.addEventListener('click', () => {
+    function signInUser() {
+        signInWithPopup(auth, GithubAuthProvider)
+            .then((result) => {
+                // This gives you a GitHub Access Token. You can use it to access the GitHub API.
+                const credential = GithubAuthProvider.credentialFromResult(result);
+                console.log(credential);
+                const token = result.credential.accessToken;
+                console.log(token);
 
-//     async function signInUser() {
-//         // Sign in with Github
-//         const provider = new GithubAuthProvider();
-//         await signInWithRedirect(auth, provider);
-//     }
+                // The signed-in user info.
+                const user = result.user;
+                console.log(user);
+            }).catch((error) => {
+                // Handle Errors here.
+                const errorCode = error.code;
+                console.log(errorCode);
+                const errorMessage = error.message;
+                console.log(errorMessage);
 
-//     signInUser();
-// });
+                // The email of the user's account used
+                const email = error.email;
+                console.log(email);
+
+                // The firebase.auth.AuthCredential type that was used.
+                const credential = error.credential;
+                console.log(credential);
+            });
+    }
+
+    signInUser();
+});
 
 // Auth state change
 function initAuthStateChange() {

@@ -61,7 +61,7 @@ function footer() {
 
     // gets the copyright symbol
     const favicon = document.createElement("i");
-    favicon.classList.add("fas", "fa-copyright");
+    favicon.classList.add("fa-regular", "fa-copyright");
 
     const text = document.createTextNode(" 2020 " + "- " + copyright);
 
