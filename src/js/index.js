@@ -1,5 +1,8 @@
 import '../scss/style.scss';
 
+/** FontAwesom6 */
+import '@fortawesome/fontawesome-free/js/all.js';
+
 /** Navigation Menu */
 const toggle = document.querySelector(".toggle");
 const menu = document.querySelector(".menu");
