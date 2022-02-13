@@ -1,4 +1,3 @@
-# start-sass
-Starting a SCSS Project
+# zeicloud
 
-This project shows integration with Firebase (Authentication, Hosting and Storage)
+Tracking how many years it will take for my 5 million files to sync in iCloud. 
