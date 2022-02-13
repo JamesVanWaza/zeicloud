@@ -24,7 +24,7 @@ module.exports = {
         watchFiles: {
             paths: ['src/']
         },
-        port: 2009
+        port: 2012
     },
     optimization: {
         minimize: true,
