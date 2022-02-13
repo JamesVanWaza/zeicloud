@@ -5,8 +5,8 @@
   "targets": {
     "startbootstrap-dostesting": {
       "hosting": {
-        "startsass": [
-          "start-sass"
+        "ze-cloud-site": [
+          "zeicloud"
         ]
       }
     }

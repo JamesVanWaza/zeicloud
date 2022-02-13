@@ -1,6 +1,6 @@
 {
-    "name": "start-sass",
-    "version": "2.9.9",
+    "name": "zeicloud",
+    "version": "3.0.0",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/jamesvanwaza/start-sass.git"
