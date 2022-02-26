@@ -1,8 +1,9 @@
 .btn {
     padding: 7.5px 15px;
     background: $royalblue;
-    border-radius: 4px;
     color: $white;
+    border-radius: 5px;
+    border: 1px solid $blueviolet;
     &:hover {
         text-decoration: none;
         background-color: $white;
