@@ -1,13 +1,14 @@
 .btn {
     padding: 7.5px 15px;
     background: $royalblue;
-    border: 1px $white solid;
     border-radius: 4px;
+    color: $white;
     &:hover {
         text-decoration: none;
         background-color: $white;
         color: $blueviolet;
         transition: ease-in 0.5s;
+        border: 3px solid $blueviolet;
     }
 }
 
