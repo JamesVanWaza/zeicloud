@@ -92,6 +92,16 @@ module.exports = {
             filename: 'successful.html',
             template: './src/html-templates/successful-template.html'
         }),
+        new HtmlWebpackPlugin({
+            title: 'Projects',
+            filename: 'project.html',
+            template: './src/html-templates/project-template.html'
+        }),
+        new HtmlWebpackPlugin({
+            title: 'Project',
+            filename: 'admin/project.html',
+            template: './src/html-templates/Project-template.html'
+        }),
         // Favicon
         new FaviconsWebpackPlugin({
             logo: './src/images/S-FaviconBackgroundColor@4x.png'
