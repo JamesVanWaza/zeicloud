@@ -60,6 +60,12 @@ const fname = document.querySelector('#fname');
 const btn = document.querySelector('#submit');
 const readData = document.querySelector('#readData');
 const githubLogin = document.querySelector('#githubLogin');
+const dateCreated = document.querySelector("#dateCreated");
+const filesRemaining = document.querySelector("#filesRemaining");
+const GBRemaining = document.querySelector("#GBRemaining");
+const zeSubmit = document.querySelector("#zeSubmit");
+const zeSignOut = document.querySelector("#zeSignOut");
+const zeForm = document.querySelector("#zeForm");
 
 btn.addEventListener('click', (e) => {
     e.preventDefault();

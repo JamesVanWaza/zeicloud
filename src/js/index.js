@@ -3,10 +3,11 @@ import '../scss/style.scss';
 /** FontAwesome 6 */
 import '@fortawesome/fontawesome-free/js/all.js';
 
-/** Navigation Menu */
+/** Constants */
 const toggle = document.querySelector(".toggle");
 const menu = document.querySelector(".menu");
 const items = document.querySelectorAll(".item");
+
 
 /** Toggle mobile menu */
 function toggleMenu() {
