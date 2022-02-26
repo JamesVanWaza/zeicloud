@@ -1,7 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 // import { getAnalytics } from "firebase/analytics";
-import { getAuth, GithubAuthProvider, signInWithPopup } from "firebase/auth";
+import { getAuth, GithubAuthProvider, signInWithRedirect, signOut } from "firebase/auth";
 import { getFirestore, collection, addDoc, getDocs } from "firebase/firestore";
 // import { getFunctions } from "firebase/functions";
 // import { getMessaging } from "firebase/messaging";
@@ -89,6 +89,7 @@ if(zeSubmit) {
 
 
 // Read data from firestore
+if(readData) {
 readData.addEventListener('click', (e) => {
     async function readFormData() {
         const querySnapshot = await getDocs(collection(db, 'contactForm'));
@@ -100,61 +101,25 @@ readData.addEventListener('click', (e) => {
 
     readFormData();
 });
+}
 
-/** Setting up Auth */
-// Sign in with Github
-githubLogin.addEventListener('click', () => {
-    function signInUser() {
-        signInWithPopup(auth, GithubAuthProvider)
-            .then((result) => {
-                // This gives you a GitHub Access Token. You can use it to access the GitHub API.
-                const credential = GithubAuthProvider.credentialFromResult(result);
-                console.log(credential);
-                const token = result.credential.accessToken;
-                console.log(token);
-
-                // The signed-in user info.
-                const user = result.user;
-                console.log(user);
-            }).catch((error) => {
-                // Handle Errors here.
-                const errorCode = error.code;
-                console.log(errorCode);
-                const errorMessage = error.message;
-                console.log(errorMessage);
-
-                // The email of the user's account used
-                const email = error.email;
-                console.log(email);
-
-                // The firebase.auth.AuthCredential type that was used.
-                const credential = error.credential;
-                console.log(credential);
-            });
-    }
-
-    signInUser();
-});
-
-// Auth state change
-function initAuthStateChange() {
-    onAuthStateChanged(auth, (user) => {
-        if (user) {
-            console.log('User is signed in');
-        } else {
-            console.log('User is signed out');
-        }
+/** Sign in with Github */
+if (githubLogin) {
+    githubLogin.addEventListener('click', () => {
+        const provider = new GithubAuthProvider();
+        signInWithRedirect(auth, provider);
     });
 }
 
-// Sign out
-function signOutUser() {
-    signOut(auth).then(() => {
-        console.log('User signed out');
-    }).catch((error) => {
-        console.error('Error signing out: ', error);
+/** Sign out */
+if (zeSignOut) {
+    zeSignOut.addEventListener('click', () => {
+        signOut(auth).then(() => {
+            // Sign-out successful.
+            // TODO: Create a sign-out success message
+            console.log('Sign-out successful.');
+        }).catch((error) => {
+            // An error happened.
+        });
     });
 }
-
-initAuthStateChange();
-signOutUser();
