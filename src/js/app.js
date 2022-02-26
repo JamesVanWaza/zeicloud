@@ -66,15 +66,16 @@ const zeSubmit = document.querySelector("#zeSubmit");
 const zeSignOut = document.querySelector("#zeSignOut");
 const zeForm = document.querySelector("#zeForm");
 
+// Admin Project Submit Form
 if(zeSubmit) {
   zeSubmit.addEventListener('click', (e) => {
       e.preventDefault();
 
       async function saveFormData() {
           const docRef = await addDoc(collection(db, 'zeFiles'), {
-              'DateCreated': dateCreated.value,
-              'filesRemaining': filesRemaining.value,
-              'gBRemaining': gBRemaining.value
+              'Date Created': dateCreated.value,
+              'Files Remaining': filesRemaining.value,
+              'GB Remaining': gBRemaining.value
           }).then(() => {
               console.log('Document written with ID: ', docRef.id);
               profileForm.reset();
@@ -87,20 +88,19 @@ if(zeSubmit) {
   });
 }
 
-
 // Read data from firestore
 if(readData) {
-readData.addEventListener('click', (e) => {
-    async function readFormData() {
-        const querySnapshot = await getDocs(collection(db, 'contactForm'));
+  readData.addEventListener('click', (e) => {
+      async function readFormData() {
+          const querySnapshot = await getDocs(collection(db, 'contactForm'));
 
-        querySnapshot.forEach((doc) => {
-            console.log(`${doc.id} => ${doc.data()}`);
-        });
-    }
+          querySnapshot.forEach((doc) => {
+              console.log(`${doc.id} => ${doc.data()}`);
+          });
+      }
 
-    readFormData();
-});
+      readFormData();
+  });
 }
 
 /** Sign in with Github */
