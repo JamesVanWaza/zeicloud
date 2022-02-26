@@ -1,46 +1,62 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>zeIcloud</title>
-<link rel="icon" href="assets/favicon.png"><script defer src="index.js"></script><script defer src="app.js"></script></head>
-
-<body>
-    <nav>
-        <ul class="menu">
-            <li class="logo">
-                <a href="index.html">ZEICLOUD</a>
-            </li>
-            <li class="item">
-                <a href="#">About</a>
-            </li>
-            <li class="item">
-                <a href="#">Services</a>
-            </li>
-            <li class="item">
-                <a href="#">Features</a>
-            </li>
-            <li class="item">
-                <a href="#">Blog</a>
-            </li>
-            <li class="item">
-                <a href="#">Contact</a>
-            </li>
-            <li class="item button">
-                <a href="signin.html">Log In</a>
-            </li>
-            <li class="item button secondary">
-                <a href="signup.html">Create Account</a>
-            </li>
-            <li class="toggle"><a href="#"><i class="fas fa-bars"></i></a></li>
-        </ul>
-    </nav>
-
-    <section class="container">
-        <button type="submit" id="githubLogin">Sign in with Github <i class="fa-brands fa-github-square"></i></button>
-    </section>
-</body>
-
-</html>
+<head><link rel="icon" href="assets/favicon.png"><script defer src="index.js"></script><script defer src="app.js"></script></head>Html Webpack Plugin:
+<pre>
+  Error: Child compilation failed:
+  Module not found: Error: Can't resolve '/Users/jamesvanwazambpro/Library/Mobile Documents/com~apple~CloudDocs/htdocs/Firebase/zeicloud/src/html-templates/projects-temp  late.html' in '/Users/jamesvanwazambpro/Library/Mobile Documents/com~apple~CloudDocs/htdocs/Firebase/zeicloud'
+  ModuleNotFoundError: Module not found: Error: Can't resolve '/Users/jamesvanwazambpro/Library/Mobile Documents/com~apple~CloudDocs/htdocs/Firebase/zeicloud/src/html-te  mplates/projects-template.html' in '/Users/jamesvanwazambpro/Library/Mobile Documents/com~apple~CloudDocs/htdocs/Firebase/zeicloud'
+      at /Users/jamesvanwazambpro/Library/Mobile Documents/com~apple~CloudDocs/htdocs/Firebase/zeicloud/node_modules/webpack/lib/Compilation.js:2014:28
+      at /Users/jamesvanwazambpro/Library/Mobile Documents/com~apple~CloudDocs/htdocs/Firebase/zeicloud/node_modules/webpack/lib/NormalModuleFactory.js:791:13
+      at eval (eval at create (/Users/jamesvanwazambpro/Library/Mobile Documents/com~apple~CloudDocs/htdocs/Firebase/zeicloud/node_modules/tapable/lib/HookCodeFactory.js  :33:10), <anonymous>:10:1)
+      at /Users/jamesvanwazambpro/Library/Mobile Documents/com~apple~CloudDocs/htdocs/Firebase/zeicloud/node_modules/webpack/lib/NormalModuleFactory.js:265:22
+      at eval (eval at create (/Users/jamesvanwazambpro/Library/Mobile Documents/com~apple~CloudDocs/htdocs/Firebase/zeicloud/node_modules/tapable/lib/HookCodeFactory.js  :33:10), <anonymous>:9:1)
+      at /Users/jamesvanwazambpro/Library/Mobile Documents/com~apple~CloudDocs/htdocs/Firebase/zeicloud/node_modules/webpack/lib/NormalModuleFactory.js:427:22
+      at /Users/jamesvanwazambpro/Library/Mobile Documents/com~apple~CloudDocs/htdocs/Firebase/zeicloud/node_modules/webpack/lib/NormalModuleFactory.js:111:11
+      at /Users/jamesvanwazambpro/Library/Mobile Documents/com~apple~CloudDocs/htdocs/Firebase/zeicloud/node_modules/webpack/lib/NormalModuleFactory.js:663:25
+      at /Users/jamesvanwazambpro/Library/Mobile Documents/com~apple~CloudDocs/htdocs/Firebase/zeicloud/node_modules/webpack/lib/NormalModuleFactory.js:848:8
+      at /Users/jamesvanwazambpro/Library/Mobile Documents/com~apple~CloudDocs/htdocs/Firebase/zeicloud/node_modules/webpack/lib/NormalModuleFactory.js:968:5
+  
+  - Compilation.js:2014 
+    [zeicloud]/[webpack]/lib/Compilation.js:2014:28
+  
+  - NormalModuleFactory.js:791 
+    [zeicloud]/[webpack]/lib/NormalModuleFactory.js:791:13
+  
+  
+  - NormalModuleFactory.js:265 
+    [zeicloud]/[webpack]/lib/NormalModuleFactory.js:265:22
+  
+  
+  - NormalModuleFactory.js:427 
+    [zeicloud]/[webpack]/lib/NormalModuleFactory.js:427:22
+  
+  - NormalModuleFactory.js:111 
+    [zeicloud]/[webpack]/lib/NormalModuleFactory.js:111:11
+  
+  - NormalModuleFactory.js:663 
+    [zeicloud]/[webpack]/lib/NormalModuleFactory.js:663:25
+  
+  - NormalModuleFactory.js:848 
+    [zeicloud]/[webpack]/lib/NormalModuleFactory.js:848:8
+  
+  - NormalModuleFactory.js:968 
+    [zeicloud]/[webpack]/lib/NormalModuleFactory.js:968:5
+  
+  - child-compiler.js:169 
+    [zeicloud]/[html-webpack-plugin]/lib/child-compiler.js:169:18
+  
+  - Compiler.js:564 
+    [zeicloud]/[webpack]/lib/Compiler.js:564:11
+  
+  - Compiler.js:1183 
+    [zeicloud]/[webpack]/lib/Compiler.js:1183:17
+  
+  
+  - task_queues.js:95 processTicksAndRejections
+    internal/process/task_queues.js:95:5
+  
+  - task_queues.js:64 runNextTicks
+    internal/process/task_queues.js:64:3
+  
+  - timers.js:437 processImmediate
+    internal/timers.js:437:9
+  
+</pre>
