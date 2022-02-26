@@ -98,9 +98,9 @@ module.exports = {
             template: './src/html-templates/project-template.html'
         }),
         new HtmlWebpackPlugin({
-            title: 'Projects',
-            filename: 'admin/projects.html',
-            template: './src/html-templates/projects-template.html'
+            title: 'Project',
+            filename: 'admin/project.html',
+            template: './src/admin/project-template.html'
         }),
         // Favicon
         new FaviconsWebpackPlugin({
