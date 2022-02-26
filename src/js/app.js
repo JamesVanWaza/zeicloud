@@ -27,13 +27,13 @@ const app = initializeApp(firebaseConfig);
 // Initialize Analytics
 //const analytics = getAnalytics(app);
 
-// Auth 
+// Auth
 const auth = getAuth(app);
 
 // Firestore
 const db = getFirestore(app);
 
-// Functions    
+// Functions
 // const functions = getFunctions(app);
 
 // Messaging
@@ -57,33 +57,36 @@ const db = getFirestore(app);
 /** Constants */
 const profileForm = document.querySelector('#form');
 const fname = document.querySelector('#fname');
-const btn = document.querySelector('#submit');
 const readData = document.querySelector('#readData');
 const githubLogin = document.querySelector('#githubLogin');
 const dateCreated = document.querySelector("#dateCreated");
 const filesRemaining = document.querySelector("#filesRemaining");
-const GBRemaining = document.querySelector("#GBRemaining");
+const gBRemaining = document.querySelector("#gBRemaining");
 const zeSubmit = document.querySelector("#zeSubmit");
 const zeSignOut = document.querySelector("#zeSignOut");
 const zeForm = document.querySelector("#zeForm");
 
-btn.addEventListener('click', (e) => {
-    e.preventDefault();
+if(zeSubmit) {
+  zeSubmit.addEventListener('click', (e) => {
+      e.preventDefault();
 
-    async function saveFormData() {
-        const docRef = await addDoc(collection(db, 'contactForm'), {
-            'First Name': fname.value, // As of Jan 10 2022, the data is being saved to firestore, but i have to declare the docRef variable - still an issue.
-            //createdAt: firebase.firestore.FieldValue.serverTimestamp()
-        }).then(() => {
-            console.log('Document written with ID: ', docRef.id);
-            profileForm.reset();
-        }).catch((error) => {
-            console.error('Error adding document: ', error);
-        });
-    }
+      async function saveFormData() {
+          const docRef = await addDoc(collection(db, 'zeFiles'), {
+              'DateCreated': dateCreated.value,
+              'filesRemaining': filesRemaining.value,
+              'gBRemaining': gBRemaining.value
+          }).then(() => {
+              console.log('Document written with ID: ', docRef.id);
+              profileForm.reset();
+          }).catch((error) => {
+              console.error('Error adding document: ', error);
+          });
+      }
 
-    saveFormData();
-});
+      saveFormData();
+  });
+}
+
 
 // Read data from firestore
 readData.addEventListener('click', (e) => {
@@ -99,7 +102,7 @@ readData.addEventListener('click', (e) => {
 });
 
 /** Setting up Auth */
-// Sign in with Github  
+// Sign in with Github
 githubLogin.addEventListener('click', () => {
     function signInUser() {
         signInWithPopup(auth, GithubAuthProvider)
