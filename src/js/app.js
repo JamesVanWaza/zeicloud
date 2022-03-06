@@ -67,40 +67,40 @@ const zeSignOut = document.querySelector("#zeSignOut");
 const zeForm = document.querySelector("#zeForm");
 
 // Admin Project Submit Form
-if(zeSubmit) {
-  zeSubmit.addEventListener('click', (e) => {
-      e.preventDefault();
+if (zeSubmit) {
+    zeSubmit.addEventListener('click', (e) => {
+        e.preventDefault();
 
-      async function saveFormData() {
-          const docRef = await addDoc(collection(db, 'zeFiles'), {
-              'Date Created': dateCreated.value,
-              'Files Remaining': filesRemaining.value,
-              'GB Remaining': gBRemaining.value
-          }).then(() => {
-              console.log('Document written with ID: ', docRef.id);
-              profileForm.reset();
-          }).catch((error) => {
-              console.error('Error adding document: ', error);
-          });
-      }
+        async function saveFormData() {
+            const docRef = await addDoc(collection(db, 'zeFiles'), {
+                'Date Created': dateCreated.value,
+                'Files Remaining': filesRemaining.value,
+                'GB Remaining': gBRemaining.value
+            }).then(() => {
+                console.log('Document written with ID: ', docRef.id);
+                profileForm.reset();
+            }).catch((error) => {
+                console.error('Error adding document: ', error);
+            });
+        }
 
-      saveFormData();
-  });
+        saveFormData();
+    });
 }
 
 // Read data from firestore
-if(readData) {
-  readData.addEventListener('click', (e) => {
-      async function readFormData() {
-          const querySnapshot = await getDocs(collection(db, 'contactForm'));
+if (readData) {
+    readData.addEventListener('click', (e) => {
+        async function readFormData() {
+            const querySnapshot = await getDocs(collection(db, 'contactForm'));
 
-          querySnapshot.forEach((doc) => {
-              console.log(`${doc.id} => ${doc.data()}`);
-          });
-      }
+            querySnapshot.forEach((doc) => {
+                console.log(`${doc.id} => ${doc.data()}`);
+            });
+        }
 
-      readFormData();
-  });
+        readFormData();
+    });
 }
 
 /** Sign in with Github */
@@ -109,7 +109,10 @@ if (githubLogin) {
         const provider = new GithubAuthProvider();
         signInWithRedirect(auth, provider);
     });
+
+    document.querySelector('zeSignOut').style.display = 'none';
 }
+
 
 /** Sign out */
 if (zeSignOut) {
@@ -118,6 +121,7 @@ if (zeSignOut) {
             // Sign-out successful.
             // TODO: Create a sign-out success message
             console.log('Sign-out successful.');
+            document.querySelector('githubLogin').style.display = 'block';
         }).catch((error) => {
             // An error happened.
         });
