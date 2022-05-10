@@ -6,7 +6,7 @@
         "url": "git+https://github.com/jamesvanwaza/start-sass.git"
     },
     "dependencies": {
-        "firebase": "^9.8.0",
+        "firebase": "^9.8.1",
         "jquery": "^3.6.0"
     },
     "devDependencies": {
