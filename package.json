@@ -1,12 +1,12 @@
 {
     "name": "zeicloud",
-    "version": "3.0.7",
+    "version": "3.0.8",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/jamesvanwaza/start-sass.git"
     },
     "dependencies": {
-        "firebase": "^9.8.1",
+        "firebase": "^9.9.0",
         "jquery": "^3.6.0"
     },
     "devDependencies": {
@@ -17,12 +17,12 @@
         "file-loader": "^6.2.0",
         "html-webpack-plugin": "^5.5.0",
         "node-sass": "^7.0.1",
-        "sass-loader": "^13.0.0",
+        "sass-loader": "^13.0.2",
         "style-loader": "^3.3.1",
         "url-loader": "^4.1.1",
-        "webpack": "^5.72.1",
-        "webpack-cli": "^4.9.2",
-        "webpack-dev-server": "^4.9.0"
+        "webpack": "^5.73.0",
+        "webpack-cli": "^4.10.0",
+        "webpack-dev-server": "^4.9.3"
     },
     "scripts": {
         "build": "webpack -w",
