@@ -89,7 +89,6 @@ if (zeSubmit) {
         dateCreated.value = '',
             filesRemaining.value = '';
         gBRemaining.value = '';
-
     });
 }
 
