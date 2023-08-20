@@ -72,10 +72,11 @@ if (zeSubmit) {
         e.preventDefault();
 
         async function saveFormData() {
-            const docRef = await addDoc(collection(db, 'zeFiles'), {
+            const docRef = await addDoc(collection(db, 'zeIcloudForm'), {
                 'Date Created': dateCreated.value,
                 'Files Remaining': filesRemaining.value,
-                'GB Remaining': gBRemaining.value
+                'GB Remaining': gBRemaining.value,
+                dateCreated: FieldValue.serverTimestamp()
             }).then(() => {
                 console.log('Document written with ID: ', docRef.id);
                 profileForm.reset();
@@ -92,7 +93,7 @@ if (zeSubmit) {
 if (readData) {
     readData.addEventListener('click', (e) => {
         async function readFormData() {
-            const querySnapshot = await getDocs(collection(db, 'contactForm'));
+            const querySnapshot = await getDocs(collection(db, 'zeIcloudForm'));
 
             querySnapshot.forEach((doc) => {
                 console.log(`${doc.id} => ${doc.data()}`);
