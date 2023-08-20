@@ -56,7 +56,6 @@ const db = getFirestore(app);
 
 /** Constants */
 const profileForm = document.querySelector('#form');
-const fname = document.querySelector('#fname');
 const readData = document.querySelector('#readData');
 const githubLogin = document.querySelector('#githubLogin');
 const dateCreated = document.querySelector("#dateCreated");
@@ -64,7 +63,6 @@ const filesRemaining = document.querySelector("#filesRemaining");
 const gBRemaining = document.querySelector("#gBRemaining");
 const zeSubmit = document.querySelector("#zeSubmit");
 const zeSignOut = document.querySelector("#zeSignOut");
-const zeForm = document.querySelector("#zeForm");
 
 // Admin Project Submit Form
 if (zeSubmit) {
