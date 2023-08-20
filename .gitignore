@@ -1,7 +1,6 @@
 node_modules/
 yarn.lock
 .DS_Store
-mysqli-connect.php
 .firebase/hosting.cHVibGlj.cache
 firestore.indexes.json
 firestore.rules
@@ -9,3 +8,4 @@ functions/.eslintrc.json
 storage.rules
 
 .github/workflows/.hosting.yml.icloud
+src/images/VersionControl/
