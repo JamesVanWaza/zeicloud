@@ -76,7 +76,7 @@ if (zeSubmit) {
                 'Date Created': dateCreated.value,
                 'Files Remaining': filesRemaining.value,
                 'GB Remaining': gBRemaining.value,
-                dateCreated: FieldValue.serverTimestamp()
+                // dateCreated: FieldValue.serverTimestamp()
             }).then(() => {
                 console.log('Document written with ID: ', docRef.id);
                 profileForm.reset();
@@ -86,6 +86,12 @@ if (zeSubmit) {
         }
 
         saveFormData();
+
+        // The Form is Reset
+        dateCreated.value = '',
+            filesRemaining.value = '';
+        gBRemaining.value = '';
+
     });
 }
 
