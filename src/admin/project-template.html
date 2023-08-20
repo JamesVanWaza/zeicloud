@@ -36,17 +36,28 @@
     <section class="container-fluid">
         <article>
             <form id="zeForm" class="my-5">
-                <h1>Insert Data</h1>
-                <input type="date" name="dateCreated" id="dateCreated" placeholder="Date Created">
-                <br>
-                <input type="number" name="filesRemaining" id="filesRemaining" placeholder="Files Remaining">
-                <br>
-                <input type="number" name="GBRemaining" id="gBRemaining" placeholder="GB Remaining" step="0.01">
-                <br>
-                <button type="submit" id="zeSubmit" class="btn btn-secondary">Add Files Insert File Icon</button>
+                <div class="row">
+                    <h1>Insert Data</h1>
+                    <div class="col-3">
+                        <input type="date" class="form-control" name="dateCreated" id="dateCreated"
+                            placeholder="Date Created">
+                    </div>
+                    <div class="col-3">
+                        <input type="number" class="form-control" name="filesRemaining" id="filesRemaining"
+                            placeholder="Files Remaining">
+                    </div>
+                    <div class="col-3">
+                        <input type="number" class="form-control" name="GBRemaining" id="gBRemaining"
+                            placeholder="GB Remaining" step="0.01">
+                    </div>
+                    <div class="col-3">
+                        <button type="submit" id="zeSubmit" class="btn btn-secondary">Add Files Insert File
+                            Icon</button>
+                    </div>
+                </div>
 
                 <!-- INSERT IMAGE SHOWING THE UPLOAD DATA but that will be done later
-        <input type="file" name="insertImage" id="InsertImage"> -->
+                <input type="file" name="insertImage" id="InsertImage"> -->
             </form>
 
             CREATE A CRUD DEMO
