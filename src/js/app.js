@@ -2,7 +2,7 @@
 import { initializeApp } from "firebase/app";
 // import { getAnalytics } from "firebase/analytics";
 import { getAuth, GithubAuthProvider, signInWithRedirect, signOut } from "firebase/auth";
-import { getFirestore, collection, addDoc, getDocs } from "firebase/firestore";
+import { getFirestore, collection, addDoc, getDocs, Timestamp } from "firebase/firestore";
 // import { getFunctions } from "firebase/functions";
 // import { getMessaging } from "firebase/messaging";
 // import { getPerformance } from "firebase/performance";
@@ -76,7 +76,7 @@ if (zeSubmit) {
                 'Date Created': dateCreated.value,
                 'Files Remaining': filesRemaining.value,
                 'GB Remaining': gBRemaining.value,
-                // dateCreated: FieldValue.serverTimestamp()
+                dateCreated: Timestamp.fromDate(new Date())
             }).then(() => {
                 console.log('Document written with ID: ', docRef.id);
                 profileForm.reset();
