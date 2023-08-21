@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark" class="h-100">
 
 <head>
     <meta charset="UTF-8">
@@ -7,68 +7,65 @@
     <title>zeIcloud</title>
 <link rel="icon" href="../assets/favicon.png"><script defer src="../index.js"></script><script defer src="../app.js"></script></head>
 
-<body>
-    <nav>
-        <ul class="menu">
-            <li class="logo">
-                <a href="index.html">ZEICLOUD</a>
-            </li>
-            <li class="item">
-                <a href="#">About</a>
-            </li>
-            <li class="item">
-                <a href="#">Services</a>
-            </li>
-            <li class="item">
-                <a href="#">Features</a>
-            </li>
-            <li class="item">
-                <a href="#">Blog</a>
-            </li>
-            <li class="item">
-                <a href="#">Contact</a>
-            </li>
-            <li class="item button">
-                <a href="signin.html">Log In</a>
-            </li>
-            <li class="item button secondary">
-                <a href="signup.html">Create Account</a>
-            </li>
-            <li class="toggle"><a href="#"><i class="fas fa-bars"></i></a></li>
-        </ul>
-    </nav>
+<body class="d-flex flex-column h-100">
+    <header>
+        <nav class="navbar navbar-expand-md bg-primary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">ZeIcloud</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav ms-auto mb-2 mb-md-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="profile.html" class="btn btn-secondary">My Account</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
 
-    <section class="container">
-        <aside>
-            INSERT SIDEBAR <br> My Profile
-            <button type="submit" id="zeSignOut" class="btn red">SignOut</button>
-        </aside>
+    <section class="container-fluid">
         <article>
-            <form id="zeForm">
-                <input type="date" name="dateCreated" id="dateCreated" placeholder="Date Created">
-                <br>
-                <input type="number" name="filesRemaining" id="filesRemaining" placeholder="Files Remaining">
-                <br>
-                <input type="number" name="GBRemaining" id="gBRemaining" placeholder="GB Remaining" step="0.01">
-                <br>
-                <button type="submit" id="zeSubmit" class="btn">Add Files Insert File Icon</button>
+            <form id="zeForm" class="my-5">
+                <div class="row">
+                    <h1>Insert Data</h1>
+                    <div class="col-3">
+                        <input type="date" class="form-control" name="dateCreated" id="dateCreated"
+                            placeholder="Date Created">
+                    </div>
+                    <div class="col-3">
+                        <input type="number" class="form-control" name="filesRemaining" id="filesRemaining"
+                            placeholder="Files Remaining">
+                    </div>
+                    <div class="col-3">
+                        <input type="number" class="form-control" name="GBRemaining" id="gBRemaining"
+                            placeholder="GB Remaining" step="0.01">
+                    </div>
+                    <div class="col-3">
+                        <button type="submit" id="zeSubmit" class="btn btn-secondary">Add Files <i
+                                class="fa-solid fa-file"></i></button>
+                                <div id="liveAlertPlaceholder"></div>
+        <button type="button" class="btn btn-primary" id="liveAlertBtn">Show live
+            alert</button>
+                    </div>
+                </div>
 
                 <!-- INSERT IMAGE SHOWING THE UPLOAD DATA but that will be done later
-        <input type="file" name="insertImage" id="InsertImage"> -->
+                <input type="file" name="insertImage" id="InsertImage"> -->
             </form>
 
-            <br><br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br> CREATE A CRUD DEMO
-            <button type="button" name="button" class="btn orange">EDIT INSERT PENCIL FAVICON</button>
-            <button type="button" name="button" class="btn red">DELETE INSERT X FAVICON</button>
+            CREATE A CRUD DEMO
+            <button type="button" name="button" class="btn btn-outline-warning">EDIT INSERT PENCIL FAVICON</button>
+            <button type="button" name="button" class="btn btn-outline-danger">DELETE INSERT X FAVICON</button>
         </article>
     </section>
 </body>
