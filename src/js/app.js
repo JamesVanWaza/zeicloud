@@ -120,7 +120,14 @@ if (readData) {
             const querySnapshot = await getDocs(collection(db, 'zeIcloudForm'));
 
             querySnapshot.forEach((doc) => {
-                console.log(`${doc.id} => ${doc.data()}`);
+                // console.log(`${doc.id} => ${doc.data()}`); - This shows the data in the console
+                const data = doc.data();
+                const row = `<tr>
+                    <td>${data.filesRemaining}</td>
+                    <td>${data.gBRemaining}</td>
+                    </tr>`;
+                const table = document.getElementById('myTable');
+                table.innerHTML += row;
             });
         }
 
