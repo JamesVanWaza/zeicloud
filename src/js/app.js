@@ -92,7 +92,7 @@ if (zeSubmit) {
     });
 }
 
-// Read data from firestore
+/** Read Data from Firestore */
 if (readData) {
     readData.addEventListener('click', (e) => {
         async function readFormData() {
@@ -117,7 +117,6 @@ if (githubLogin) {
     document.querySelector('zeSignOut').style.display = 'none';
 }
 
-
 /** Sign out */
 if (zeSignOut) {
     zeSignOut.addEventListener('click', () => {
@@ -129,5 +128,26 @@ if (zeSignOut) {
         }).catch((error) => {
             // An error happened.
         });
+    });
+}
+
+/** Alerts */
+const alertPlaceholder = document.getElementById('liveAlertPlaceholder');
+const appendAlert = (message, type) => {
+    const wrapper = document.createElement('div');
+    wrapper.innerHTML = [
+        `<div class="alert alert-${type} alert-dismissible" role="alert">`,
+        `<div>${message}</div>`,
+        `<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>`,
+        `</div>`
+    ].join('');
+
+    alertPlaceholder.append(wrapper);
+};
+
+const alertTrigger = document.getElementById('liveAlertBtn');
+if (alertTrigger) {
+    alertTrigger.addEventListener('click', () => {
+        appendAlert('Nice you triggered this alert message!', 'success');
     });
 }
