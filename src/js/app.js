@@ -129,6 +129,14 @@ if (readData) {
                 const table = document.getElementById('myTable');
                 table.innerHTML += row;
             });
+
+            // let zeIcloudForms = [];
+            // querySnapshot.forEach((doc) => {
+            //     zeIcloudForms.push({ ...doc.data(), id: doc.id });
+            //     console.log(zeIcloudForms);
+            // }).catch(err => {
+            //     console.log(err);
+            // })
         }
 
         readFormData();
