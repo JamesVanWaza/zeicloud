@@ -2,7 +2,7 @@
 import { initializeApp } from "firebase/app";
 // import { getAnalytics } from "firebase/analytics";
 import { getAuth, GithubAuthProvider, signInWithRedirect, signOut } from "firebase/auth";
-import { getFirestore, collection, addDoc, getDocs, Timestamp } from "firebase/firestore";
+import { getFirestore, collection, addDoc, getDocs, Timestamp, onSnapshot } from "firebase/firestore";
 // import { getFunctions } from "firebase/functions";
 // import { getMessaging } from "firebase/messaging";
 // import { getPerformance } from "firebase/performance";
@@ -159,4 +159,71 @@ if (zeSignOut) {
         });
     });
 }
+
+/** Firestore Read Template */
+var stdNo = 0;
+
+var tbody = document.getElementById('tbody1');
+
+function AddItemToTable(name, roll, sec, gen) {
+    let trow = document.createElement("trow");
+    let td1 = document.createElement('td');
+    let td2 = document.createElement('td');
+    let td3 = document.createElement('td');
+    let td4 = document.createElement('td');
+    let td5 = document.createElement('td');
+
+    td1.innerHTML = ++stdNo;
+    td2.innerHTML = name;
+    td3.innerHTML = roll;
+    td4.innerHTML = sec;
+    td5.innerHTML = gen;
+
+    trow.appendChild(td1);
+    trow.appendChild(td2);
+    trow.appendChild(td3);
+    trow.appendChild(td4);
+    trow.appendChild(td5);
+
+    tbody.appendChild(trow);
+}
+
+function AddAllItemsToTable(TheStudent) {
+    stdNo = 0;
+    tbody.innerHTML = "";
+    TheStudent.forEach(element => {
+        AddItemToTable(element.NameOfStd, element.RollNo, element.Section, element.Gender);
+    });
+}
+
+async function GetAllDataOnce() {
+    const querySnapshot1 = await getDocs(collection(db, 'TheStudentsList'));
+
+    var students = [];
+
+    querySnapshot1.forEach(doc => {
+        students.push(doc.data());
+
+        AddAllItemsToTable(students);
+    });
+}
+
+window.onload = GetAllDataOnce;
+
+// async function GetAllDataRealTime() {
+//     const dbRef1 = collection(db, 'TheStudentsList');
+
+//     onSnapshot(dbRef1, (querySnapshot1) => {
+//         var students = [];
+//     });
+
+//     querySnapshot1.forEach(doc => {
+//         students.push(doc.data());
+//     });
+
+//     AddAllItemsToTable(students)
+
+
+// }
+// window.onload = GetAllDataRealTime;
 
