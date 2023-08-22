@@ -222,8 +222,5 @@ window.onload = GetAllDataOnce;
 //     });
 
 //     AddAllItemsToTable(students)
-
-
 // }
 // window.onload = GetAllDataRealTime;
-
