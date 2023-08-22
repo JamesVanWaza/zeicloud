@@ -51,11 +51,9 @@
                             placeholder="GB Remaining" step="0.01">
                     </div>
                     <div class="col-3">
+                        <div id="liveAlertPlaceholder"></div>
                         <button type="submit" id="zeSubmit" class="btn btn-secondary">Add Files <i
                                 class="fa-solid fa-file"></i></button>
-                                <div id="liveAlertPlaceholder"></div>
-        <button type="button" class="btn btn-primary" id="liveAlertBtn">Show live
-            alert</button>
                     </div>
                 </div>
 
@@ -63,9 +61,13 @@
                 <input type="file" name="insertImage" id="InsertImage"> -->
             </form>
 
-            CREATE A CRUD DEMO
+
+            <button type="button" id="readData" name="button" class="btn btn-outline-info">DISPLAY THE DATA</button>
+
             <button type="button" name="button" class="btn btn-outline-warning">EDIT INSERT PENCIL FAVICON</button>
             <button type="button" name="button" class="btn btn-outline-danger">DELETE INSERT X FAVICON</button>
+
+            <table id="myTable"></table>
         </article>
     </section>
 </body>

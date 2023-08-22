@@ -8,36 +8,32 @@
 <link rel="icon" href="assets/favicon.png"><script defer src="index.js"></script><script defer src="app.js"></script></head>
 
 <body>
-    <nav>
-        <ul class="menu">
-            <li class="logo">
-                <a href="index.html">Invisible App</a>
-            </li>
-            <li class="item">
-                <a href="#">About</a>
-            </li>
-            <li class="item">
-                <a href="#">Services</a>
-            </li>
-            <li class="item">
-                <a href="#">Features</a>
-            </li>
-            <li class="item">
-                <a href="#">Blog</a>
-            </li>
-            <li class="item">
-                <a href="#">Contact</a>
-            </li>
-            <li class="item button">
-                <a href="signin.html">Log In</a>
-            </li>
-            <li class="item button secondary">
-                <a href="signup.html">Sign Up</a>
-            </li>
-            <li class="toggle"><a href="#"><i class="fas fa-bars"></i></a></li>
-        </ul>
-    </nav>
-    <section class="container">
+    <header>
+        <nav class="navbar navbar-expand-md bg-primary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">ZeIcloud</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav ms-auto mb-2 mb-md-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="btn btn-primary" href="signin.html">Sign In</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="btn btn-secondary" href="signup.html">Sign Up</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="container-fluid">
         <h1>OH OH</h1>
     </section>
 </body>

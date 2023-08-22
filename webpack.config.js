@@ -106,6 +106,11 @@ module.exports = {
             filename: 'admin/project.html',
             template: './src/admin/project-template.html'
         }),
+        new HtmlWebpackPlugin({
+            title: 'Firestore Read',
+            filename: 'admin/firestore-read.html',
+            template: './src/admin/firestore-read-template.html'
+        }),
         // Favicon
         new FaviconsWebpackPlugin({
             logo: './src/images/Z@4x.png'
