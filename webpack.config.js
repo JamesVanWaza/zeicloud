@@ -111,6 +111,11 @@ module.exports = {
             filename: 'admin/firestore-read.html',
             template: './src/admin/firestore-read-template.html'
         }),
+        new HtmlWebpackPlugin({
+            title: 'Firestore Create',
+            filename: 'admin/firestore-create.html',
+            template: './src/admin/firestore-create-template.html'
+        }),
         // Favicon
         new FaviconsWebpackPlugin({
             logo: './src/images/Z@4x.png'
