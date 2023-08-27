@@ -69,6 +69,7 @@ const zeSignOut = document.querySelector("#zeSignOut");
 const zeSubmitTheStudentsListBtn = document.querySelector('#zeSubmitTheStudentsListBtn');
 const zeGender = document.querySelector('#zeGender');
 const zeDateCreated = document.querySelector("#zeDateCreated");
+const zeGBRemaining = document.querySelector("#zeGBRemaining");
 
 /** Admin: Firestore Create Insert Data */
 if (zeSubmitTheStudentsListBtn) {
@@ -79,7 +80,7 @@ if (zeSubmitTheStudentsListBtn) {
             const docRef = await addDoc(collection(db, 'zeStudentsListForm'), {
                 'Date Created': zeDateCreated.value,
                 'zeGender': zeGender.value,
-                'GB Remaining': gBRemaining.value,
+                'GB Remaining': zeGBRemaining.value,
                 CreatedOn: Timestamp.fromDate(new Date()),
                 UpdatedOn: Timestamp.fromDate(new Date()),
             }).then(() => {
@@ -93,7 +94,7 @@ if (zeSubmitTheStudentsListBtn) {
         saveFormData();
 
         /** Alerts */
-        const alertPlaceholder = document.getElementById('liveAlertPlaceholder');
+        const alertPlaceholder = document.getElementById('liveAlertPlaceholder1');
         const appendAlert = (message, type) => {
             const wrapper = document.createElement('div');
             wrapper.innerHTML = [
@@ -106,7 +107,7 @@ if (zeSubmitTheStudentsListBtn) {
             alertPlaceholder.append(wrapper);
         };
 
-        const alertTrigger = document.getElementById('zeSubmit');
+        const alertTrigger = document.getElementById('zeSubmitTheStudentsListBtn');
         if (alertTrigger) {
             alertTrigger.addEventListener('click', () => {
                 appendAlert('The data was inserted!', 'success');
@@ -116,7 +117,7 @@ if (zeSubmitTheStudentsListBtn) {
         // The Form is Reset
         dateCreated.value = '',
             zeGender.value = '';
-        gBRemaining.value = '';
+        zeGBRemaining.value = '';
     });
 }
 
