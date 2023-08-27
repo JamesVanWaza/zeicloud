@@ -65,7 +65,6 @@ const zeSubmit = document.querySelector("#zeSubmit");
 const zeSignOut = document.querySelector("#zeSignOut");
 
 /** Firestore Create Page */
-// const zeStudentsListForm = document.querySelector('#zeStudentsListForm');
 const zeSubmitTheStudentsListBtn = document.querySelector('#zeSubmitTheStudentsListBtn');
 const zeGender = document.querySelector('#zeGender');
 const zeDateCreated = document.querySelector("#zeDateCreated");
