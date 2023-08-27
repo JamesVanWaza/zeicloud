@@ -78,7 +78,7 @@ if (zeSubmitTheStudentsListBtn) {
         async function saveZeStudentsFormData() {
             const docRef1 = await addDoc(collection(db, 'zeStudentsListForm'), {
                 'Date Created': zeDateCreated.value,
-                'zeGender': zeGender.value,
+                'Gender': zeGender.value,
                 'GB Remaining': zeGBRemaining.value,
                 CreatedOn: Timestamp.fromDate(new Date()),
                 UpdatedOn: Timestamp.fromDate(new Date()),
