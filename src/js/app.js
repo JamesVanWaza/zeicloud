@@ -65,20 +65,23 @@ const zeSubmit = document.querySelector("#zeSubmit");
 const zeSignOut = document.querySelector("#zeSignOut");
 
 /** Firestore Create Page */
-const zeStudentsListForm = document.querySelector('#zeStudentsListForm');
+// const zeStudentsListForm = document.querySelector('#zeStudentsListForm');
 const zeSubmitTheStudentsListBtn = document.querySelector('#zeSubmitTheStudentsListBtn');
+const zeGender = document.querySelector('#zeGender');
 const zeDateCreated = document.querySelector("#zeDateCreated");
 
-if (zeSubmit) {
-    zeSubmit.addEventListener('click', (e) => {
+/** Admin: Firestore Create Insert Data */
+if (zeSubmitTheStudentsListBtn) {
+    zeSubmitTheStudentsListBtn.addEventListener('click', (e) => {
         e.preventDefault();
 
         async function saveFormData() {
-            const docRef = await addDoc(collection(db, 'zeIcloudForm'), {
-                'Date Created': dateCreated.value,
-                'Files Remaining': filesRemaining.value,
+            const docRef = await addDoc(collection(db, 'zeStudentsListForm'), {
+                'Date Created': zeDateCreated.value,
+                'zeGender': zeGender.value,
                 'GB Remaining': gBRemaining.value,
-                CreatedOn: Timestamp.fromDate(new Date())
+                CreatedOn: Timestamp.fromDate(new Date()),
+                UpdatedOn: Timestamp.fromDate(new Date()),
             }).then(() => {
                 console.log('Document written with ID: ', docRef.id);
                 profileForm.reset();
@@ -112,11 +115,10 @@ if (zeSubmit) {
 
         // The Form is Reset
         dateCreated.value = '',
-            filesRemaining.value = '';
+            zeGender.value = '';
         gBRemaining.value = '';
     });
 }
-
 
 // Admin Project Submit Form
 if (zeSubmit) {
