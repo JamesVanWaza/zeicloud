@@ -64,7 +64,7 @@ const gBRemaining = document.querySelector("#gBRemaining");
 const zeSubmit = document.querySelector("#zeSubmit");
 const zeSignOut = document.querySelector("#zeSignOut");
 
-/** Firestore Create Page */
+/** Admin: Firestore Create Constants */
 const zeSubmitTheStudentsListBtn = document.querySelector('#zeSubmitTheStudentsListBtn');
 const zeGender = document.querySelector('#zeGender');
 const zeDateCreated = document.querySelector("#zeDateCreated");
