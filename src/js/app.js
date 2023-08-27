@@ -94,7 +94,56 @@ if (zeSubmitTheStudentsListBtn) {
         saveZeStudentsFormData();
 
         /** Alerts */
-        const alertPlaceholder = document.getElementById('liveAlertPlaceholder1');
+        const alertPlaceholder1 = document.getElementById('liveAlertPlaceholder1');
+        const appendAlert1 = (message, type) => {
+            const wrapper1 = document.createElement('div');
+            wrapper1.innerHTML = [
+                `<div class="alert alert-${type} alert-dismissible" role="alert">`,
+                `<div>${message}</div>`,
+                `<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>`,
+                `</div>`
+            ].join('');
+
+            alertPlaceholder1.append(wrapper1);
+        };
+
+        const alertTrigger1 = document.getElementById('zeSubmitTheStudentsListBtn');
+        if (alertTrigger1) {
+            alertTrigger1.addEventListener('click', () => {
+                appendAlert1('The data was inserted!', 'success');
+            });
+        }
+
+        // The Form is Reset
+        zeDateCreated.value = '',
+            zeGender.value = '';
+        zeGBRemaining.value = '';
+    });
+}
+
+// Admin Project Submit Form
+if (zeSubmit) {
+    zeSubmit.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        async function saveFormData() {
+            const docRef = await addDoc(collection(db, 'zeIcloudForm'), {
+                'Date Created': dateCreated.value,
+                'Files Remaining': filesRemaining.value,
+                'GB Remaining': gBRemaining.value,
+                CreatedOn: Timestamp.fromDate(new Date())
+            }).then(() => {
+                console.log('Document written with ID: ', docRef.id);
+                profileForm.reset();
+            }).catch((error) => {
+                console.error('Error adding document: ', error);
+            });
+        }
+
+        saveFormData();
+
+        /** Alerts */
+        const alertPlaceholder = document.getElementById('liveAlertPlaceholder');
         const appendAlert = (message, type) => {
             const wrapper = document.createElement('div');
             wrapper.innerHTML = [
@@ -107,7 +156,7 @@ if (zeSubmitTheStudentsListBtn) {
             alertPlaceholder.append(wrapper);
         };
 
-        const alertTrigger = document.getElementById('zeSubmitTheStudentsListBtn');
+        const alertTrigger = document.getElementById('zeSubmit');
         if (alertTrigger) {
             alertTrigger.addEventListener('click', () => {
                 appendAlert('The data was inserted!', 'success');
@@ -115,60 +164,11 @@ if (zeSubmitTheStudentsListBtn) {
         }
 
         // The Form is Reset
-        zeDateCreated.value = '',
-            zeGender.value = '';
-        zeGBRemaining.value = '';
+        dateCreated.value = '',
+            filesRemaining.value = '';
+        gBRemaining.value = '';
     });
 }
-
-// Admin Project Submit Form
-// if (zeSubmit) {
-//     zeSubmit.addEventListener('click', (e) => {
-//         e.preventDefault();
-
-//         async function saveFormData() {
-//             const docRef = await addDoc(collection(db, 'zeIcloudForm'), {
-//                 'Date Created': dateCreated.value,
-//                 'Files Remaining': filesRemaining.value,
-//                 'GB Remaining': gBRemaining.value,
-//                 CreatedOn: Timestamp.fromDate(new Date())
-//             }).then(() => {
-//                 console.log('Document written with ID: ', docRef.id);
-//                 profileForm.reset();
-//             }).catch((error) => {
-//                 console.error('Error adding document: ', error);
-//             });
-//         }
-
-//         saveFormData();
-
-//         /** Alerts */
-//         const alertPlaceholder = document.getElementById('liveAlertPlaceholder');
-//         const appendAlert = (message, type) => {
-//             const wrapper = document.createElement('div');
-//             wrapper.innerHTML = [
-//                 `<div class="alert alert-${type} alert-dismissible" role="alert">`,
-//                 `<div>${message}</div>`,
-//                 `<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>`,
-//                 `</div>`
-//             ].join('');
-
-//             alertPlaceholder.append(wrapper);
-//         };
-
-//         const alertTrigger = document.getElementById('zeSubmit');
-//         if (alertTrigger) {
-//             alertTrigger.addEventListener('click', () => {
-//                 appendAlert('The data was inserted!', 'success');
-//             });
-//         }
-
-//         // The Form is Reset
-//         dateCreated.value = '',
-//             filesRemaining.value = '';
-//         gBRemaining.value = '';
-//     });
-// }
 
 /** Read Data from Firestore */
 if (readData) {
