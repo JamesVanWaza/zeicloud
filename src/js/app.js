@@ -76,14 +76,14 @@ if (zeSubmitTheStudentsListBtn) {
         e.preventDefault();
 
         async function saveZeStudentsFormData() {
-            const docRef = await addDoc(collection(db, 'zeStudentsListForm'), {
+            const docRef1 = await addDoc(collection(db, 'zeStudentsListForm'), {
                 'Date Created': zeDateCreated.value,
                 'zeGender': zeGender.value,
                 'GB Remaining': zeGBRemaining.value,
                 CreatedOn: Timestamp.fromDate(new Date()),
                 UpdatedOn: Timestamp.fromDate(new Date()),
             }).then(() => {
-                console.log('Document written with ID: ', docRef.id);
+                console.log('Document written with ID: ', docRef1.id);
                 profileForm.reset();
             }).catch((error) => {
                 console.error('Error adding document: ', error);
