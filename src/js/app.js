@@ -130,7 +130,8 @@ if (zeSubmit) {
                 'Date Created': dateCreated.value,
                 'Files Remaining': filesRemaining.value,
                 'GB Remaining': gBRemaining.value,
-                CreatedOn: Timestamp.fromDate(new Date())
+                CreatedOn: Timestamp.fromDate(new Date()),
+                UpdatedOn: Timestamp.fromDate(new Date()),
             }).then(() => {
                 console.log('Document written with ID: ', docRef.id);
                 profileForm.reset();
@@ -138,8 +139,6 @@ if (zeSubmit) {
                 console.error('Error adding document: ', error);
             });
         }
-
-        saveFormData();
 
         /** Alerts */
         const alertPlaceholder = document.getElementById('liveAlertPlaceholder');
@@ -160,7 +159,11 @@ if (zeSubmit) {
             alertTrigger.addEventListener('click', () => {
                 appendAlert('The data was inserted!', 'success');
             });
+        } else {
+            console.log('Error setting up alert');
         }
+
+        saveFormData();
 
         // The Form is Reset
         dateCreated.value = '',
@@ -280,3 +283,24 @@ if (zeSignOut) {
 //     AddAllItemsToTable(students)
 // }
 // window.onload = GetAllDataRealTime;
+
+/** Testing if the alert placeholder works */
+const alertPlaceholder2 = document.getElementById('liveAlertPlaceholder2')
+const appendAlert = (message, type) => {
+    const wrapper2 = document.createElement('div')
+    wrapper2.innerHTML = [
+        `<div class="alert alert-${type} alert-dismissible" role="alert">`,
+        `   <div>${message}</div>`,
+        '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+        '</div>'
+    ].join('');
+
+    alertPlaceholder2.append(wrapper2);
+}
+
+const alertTrigger2 = document.getElementById('liveAlertBtn2')
+if (alertTrigger2) {
+    alertTrigger2.addEventListener('click', () => {
+        appendAlert('Nice, you triggered this alert message!', 'success')
+    })
+}
