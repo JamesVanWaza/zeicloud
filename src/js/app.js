@@ -94,32 +94,33 @@ if (zeSubmitTheStudentsListBtn) {
 
         saveZeStudentsFormData();
 
-        /** Alerts */
-        const alertPlaceholder1 = document.getElementById('liveAlertPlaceholder1');
-        const appendAlert1 = (message, type) => {
-            const wrapper1 = document.createElement('div');
-            wrapper1.innerHTML = [
-                `<div class="alert alert-${type} alert-dismissible" role="alert">`,
-                `<div>${message}</div>`,
-                `<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>`,
-                `</div>`
-            ].join('');
-
-            alertPlaceholder1.append(wrapper1);
-        };
-
-        const alertTrigger1 = document.getElementById('zeSubmitTheStudentsListBtn');
-        if (alertTrigger1) {
-            alertTrigger1.addEventListener('click', () => {
-                appendAlert1('The data was inserted!', 'success');
-            });
-        }
-
         // The Form is Reset
-        zeDateCreated.value = '',
-            zeGender.value = '';
-        zeGBRemaining.value = '';
+        zeGender.value = '';
+        zeNameOfStd.value = '';
+        zeRollNo.value = '';
+        zeSection.value = '';
     });
+
+    /** Alerts */
+    const alertPlaceholder1 = document.getElementById('liveAlertPlaceholder1');
+    const appendAlert1 = (message, type) => {
+        const wrapper1 = document.createElement('div');
+        wrapper1.innerHTML = [
+            `<div class="alert alert-${type} alert-dismissible" role="alert">`,
+            `<div>${message}</div>`,
+            `<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>`,
+            `</div>`
+        ].join('');
+
+        alertPlaceholder1.append(wrapper1);
+    };
+
+    const alertTrigger1 = document.getElementById('zeSubmitTheStudentsListBtn');
+    if (alertTrigger1) {
+        alertTrigger1.addEventListener('click', () => {
+            appendAlert1('The data was inserted!', 'success');
+        });
+    }
 }
 
 // Admin Project Submit Form
