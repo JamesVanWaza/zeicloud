@@ -67,8 +67,9 @@ const zeSignOut = document.querySelector("#zeSignOut");
 /** Admin: Firestore Create Constants */
 const zeSubmitTheStudentsListBtn = document.querySelector('#zeSubmitTheStudentsListBtn');
 const zeGender = document.querySelector('#zeGender');
-const zeDateCreated = document.querySelector("#zeDateCreated");
-const zeGBRemaining = document.querySelector("#zeGBRemaining");
+const zeNameOfStd = document.querySelector("#zeNameOfStd");
+const zeRollNo = document.querySelector("#zeRollNo");
+const zeSection = document.querySelector("#zeSection");
 
 /** Admin: Firestore Create Insert Data */
 if (zeSubmitTheStudentsListBtn) {
@@ -77,9 +78,10 @@ if (zeSubmitTheStudentsListBtn) {
 
         async function saveZeStudentsFormData() {
             const docRef1 = await addDoc(collection(db, 'zeStudentsListForm'), {
-                'Date Created': zeDateCreated.value,
                 'Gender': zeGender.value,
-                'GB Remaining': zeGBRemaining.value,
+                'Name of Student': zeNameOfStd.value,
+                'Roll No': zeRollNo.value,
+                'Section': zeSection.value,
                 CreatedOn: Timestamp.fromDate(new Date()),
                 UpdatedOn: Timestamp.fromDate(new Date()),
             }).then(() => {
