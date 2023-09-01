@@ -140,36 +140,37 @@ if (zeSubmit) {
             });
         }
 
-        /** Alerts */
-        const alertPlaceholder = document.getElementById('liveAlertPlaceholder');
-        const appendAlert = (message, type) => {
-            const wrapper = document.createElement('div');
-            wrapper.innerHTML = [
-                `<div class="alert alert-${type} alert-dismissible" role="alert">`,
-                `<div>${message}</div>`,
-                `<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>`,
-                `</div>`
-            ].join('');
-
-            alertPlaceholder.append(wrapper);
-        };
-
-        const alertTrigger = document.getElementById('zeSubmit');
-        if (alertTrigger) {
-            alertTrigger.addEventListener('click', () => {
-                appendAlert('The data was inserted!', 'success');
-            });
-        } else {
-            console.log('Error setting up alert');
-        }
-
         saveFormData();
 
         // The Form is Reset
         dateCreated.value = '',
             filesRemaining.value = '';
         gBRemaining.value = '';
+
     });
+
+    /** Alerts */
+    const alertPlaceholder = document.getElementById('liveAlertPlaceholder');
+    const appendAlert = (message, type) => {
+        const wrapper = document.createElement('div');
+        wrapper.innerHTML = [
+            `<div class="alert alert-${type} alert-dismissible" role="alert">`,
+            `<div>${message}</div>`,
+            `<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>`,
+            `</div>`
+        ].join('');
+
+        alertPlaceholder.append(wrapper);
+    };
+
+    const alertTrigger = document.getElementById('zeSubmit');
+    if (alertTrigger) {
+        alertTrigger.addEventListener('click', () => {
+            appendAlert('The data was inserted!', 'success');
+        });
+    } else {
+        console.log('Error setting up alert');
+    }
 }
 
 /** Read Data from Firestore */
