@@ -285,23 +285,3 @@ if (zeSignOut) {
 // }
 // window.onload = GetAllDataRealTime;
 
-/** Testing if the alert placeholder works */
-const alertPlaceholder2 = document.getElementById('liveAlertPlaceholder2')
-const appendAlert = (message, type) => {
-    const wrapper2 = document.createElement('div')
-    wrapper2.innerHTML = [
-        `<div class="alert alert-${type} alert-dismissible" role="alert">`,
-        `   <div>${message}</div>`,
-        '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
-        '</div>'
-    ].join('');
-
-    alertPlaceholder2.append(wrapper2);
-}
-
-const alertTrigger2 = document.getElementById('liveAlertBtn2')
-if (alertTrigger2) {
-    alertTrigger2.addEventListener('click', () => {
-        appendAlert('Nice, you triggered this alert message!', 'success')
-    })
-}
