@@ -275,22 +275,20 @@ window.onload = function () {
     }
 }
 
-// window.onload = function () {
-//     GetAllDataRealTime();
+window.onload = function () {
+    GetAllDataOnceRealTime();
 
-//     async function GetAllDataRealTime() {
-//         const dbRef2 = collection(db, 'zeStudentsListForm')
-//         let allTodos = await getDocs(dbRef2);
+    async function GetAllDataOnceRealTime() {
+        const dbRef = collection(db, 'zeStudentsListForm');
 
-//         var students = [];
+        onSnapshot(dbRef, (querySnapshot1) => {
+            var students = [];
 
-//         onSnapshot(allTodos, dbRef2 => {
-//             dbRef2.forEach(doc => {
-//                 students.push(doc.data());
-//                 console.log(doc.data());
-//             })
-//         });
+            querySnapshot1.forEach(doc => {
+                students.push(doc.data());
+            });
 
-//         AddAllItemsToTable(students);
-//     }
-// }
+            AddAllItemsToTable(students);
+        });
+    }
+}
