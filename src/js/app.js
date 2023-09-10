@@ -79,8 +79,8 @@ if (zeSubmitTheStudentsListBtn) {
         async function saveZeStudentsFormData() {
             const docRef1 = await addDoc(collection(db, 'zeStudentsListForm'), {
                 'Gender': zeGender.value,
-                'Name of Student': zeNameOfStd.value,
-                'Roll No': zeRollNo.value,
+                'NameOfStudent': zeNameOfStd.value,
+                'RollNo': zeRollNo.value,
                 'Section': zeSection.value,
                 CreatedOn: Timestamp.fromDate(new Date()),
                 UpdatedOn: Timestamp.fromDate(new Date()),
@@ -223,57 +223,57 @@ if (zeSignOut) {
     });
 }
 
-/** Firestore Read Template - Temporarily commented out because the read data is always showing undefined */ 
-// var stdNo = 0;
+/** Firestore Read Template - Temporarily commented out because the read data is always showing undefined */
+var stdNo = 0;
 
-// var tbody = document.getElementById('tbody1');
+var tbody = document.getElementById('tbody1');
 
-// function AddItemToTable(name, roll, sec, gen) {
-//     let trow = document.createElement("tr");
-//     let td1 = document.createElement('td');
-//     let td2 = document.createElement('td');
-//     let td3 = document.createElement('td');
-//     let td4 = document.createElement('td');
-//     let td5 = document.createElement('td');
+function AddItemToTable(name, roll, sec, gen) {
+    let trow = document.createElement("tr");
+    let td1 = document.createElement('td');
+    let td2 = document.createElement('td');
+    let td3 = document.createElement('td');
+    let td4 = document.createElement('td');
+    let td5 = document.createElement('td');
 
-//     td1.innerHTML = ++stdNo;
-//     td2.innerHTML = name;
-//     td3.innerHTML = roll;
-//     td4.innerHTML = sec;
-//     td5.innerHTML = gen;
+    td1.innerHTML = ++stdNo;
+    td2.innerHTML = name;
+    td3.innerHTML = roll;
+    td4.innerHTML = sec;
+    td5.innerHTML = gen;
 
-//     trow.appendChild(td1);
-//     trow.appendChild(td2);
-//     trow.appendChild(td3);
-//     trow.appendChild(td4);
-//     trow.appendChild(td5);
+    trow.appendChild(td1);
+    trow.appendChild(td2);
+    trow.appendChild(td3);
+    trow.appendChild(td4);
+    trow.appendChild(td5);
 
-//     tbody.appendChild(trow);
-// }
+    tbody.appendChild(trow);
+}
 
-// function AddAllItemsToTable(TheStudent) {
-//     stdNo = 0;
-//     tbody.innerHTML = "";
-//     TheStudent.forEach(element => {
-//         AddItemToTable(element.NameOfStd, element.RollNo, element.Section, element.Gender);
-//     });
-// }
+function AddAllItemsToTable(TheStudent) {
+    stdNo = 0;
+    tbody.innerHTML = "";
+    TheStudent.forEach(element => {
+        AddItemToTable(element.NameOfStudent, element.RollNo, element.Section, element.Gender);
+    });
+}
 
-// window.onload = function () {
-//     GetAllDataOnce();
+window.onload = function () {
+    GetAllDataOnce();
 
-//     async function GetAllDataOnce() {
-//         const querySnapshot1 = await getDocs(collection(db, 'zeStudentsListForm'));
+    async function GetAllDataOnce() {
+        const querySnapshot1 = await getDocs(collection(db, 'zeStudentsListForm'));
 
-//         var students = [];
+        var students = [];
 
-//         querySnapshot1.forEach(doc => {
-//             students.push(doc.data());
+        querySnapshot1.forEach(doc => {
+            students.push(doc.data());
 
-//             AddAllItemsToTable(students);
-//         });
-//     }
-// }
+            AddAllItemsToTable(students);
+        });
+    }
+}
 
 // window.onload = function () {
 //     GetAllDataRealTime();
