@@ -64,12 +64,14 @@ const gBRemaining = document.querySelector("#gBRemaining");
 const zeSubmit = document.querySelector("#zeSubmit");
 const zeSignOut = document.querySelector("#zeSignOut");
 
-/** Admin: Firestore Create Constants */
+/** Admin: Firestore Constants */
 const zeSubmitTheStudentsListBtn = document.querySelector('#zeSubmitTheStudentsListBtn');
 const zeGender = document.querySelector('#zeGender');
 const zeNameOfStd = document.querySelector("#zeNameOfStd");
 const zeRollNo = document.querySelector("#zeRollNo");
 const zeSection = document.querySelector("#zeSection");
+const zeEditBtn = document.querySelector('#zeEditBtn');
+const zeDeleteBtn = document.querySelector('#zeDeleteBtn');
 
 /** Admin: Firestore Create Insert Data */
 if (zeSubmitTheStudentsListBtn) {
@@ -123,6 +125,16 @@ if (zeSubmitTheStudentsListBtn) {
     }
 }
 
+/** Admin: Firestore Edit Data */
+if (zeEditBtn) {
+
+}
+
+/** Admin: Firestore Delete Data */
+if (zeDeleteBtn) {
+
+}
+
 // Admin Project Submit Form
 if (zeSubmit) {
     zeSubmit.addEventListener('click', (e) => {
@@ -174,29 +186,6 @@ if (zeSubmit) {
     } else {
         console.log('Error setting up alert');
     }
-}
-
-/** Read Data from Firestore */
-if (readData) {
-    readData.addEventListener('click', (e) => {
-        async function readFormData() {
-            const querySnapshot = await getDocs(collection(db, 'zeIcloudForm'));
-
-            querySnapshot.forEach((doc) => {
-                console.log(`${doc.id} => ${doc.data()}`);  //This shows the data in the console
-
-                const data = doc.data();
-                const row = `<tr>
-                    <td>${data.filesRemaining}</td>
-                    <td>${data.gBRemaining}</td>
-                    </tr>`;
-                const table = document.getElementById('myTable');
-                table.innerHTML += row;
-            });
-        }
-
-        readFormData();
-    });
 }
 
 /** Sign in with Github */
@@ -259,36 +248,36 @@ function AddAllItemsToTable(TheStudent) {
     });
 }
 
-window.onload = function () {
-    GetAllDataOnce();
+// window.onload = function () {
+//     GetAllDataOnce();
 
-    async function GetAllDataOnce() {
-        const querySnapshot1 = await getDocs(collection(db, 'zeStudentsListForm'));
+//     async function GetAllDataOnce() {
+//         const querySnapshot1 = await getDocs(collection(db, 'zeStudentsListForm'));
 
-        var students = [];
+//         var students = [];
 
-        querySnapshot1.forEach(doc => {
-            students.push(doc.data());
+//         querySnapshot1.forEach(doc => {
+//             students.push(doc.data());
 
-            AddAllItemsToTable(students);
-        });
-    }
-}
+//             AddAllItemsToTable(students);
+//         });
+//     }
+// }
 
-window.onload = function () {
-    GetAllDataOnceRealTime();
+// window.onload = function () {
+//     GetAllDataOnceRealTime();
 
-    async function GetAllDataOnceRealTime() {
-        const dbRef = collection(db, 'zeStudentsListForm');
+//     async function GetAllDataOnceRealTime() {
+//         const dbRef = collection(db, 'zeStudentsListForm');
 
-        onSnapshot(dbRef, (querySnapshot1) => {
-            var students = [];
+//         onSnapshot(dbRef, (querySnapshot1) => {
+//             var students = [];
 
-            querySnapshot1.forEach(doc => {
-                students.push(doc.data());
-            });
+//             querySnapshot1.forEach(doc => {
+//                 students.push(doc.data());
+//             });
 
-            AddAllItemsToTable(students);
-        });
-    }
-}
+//             AddAllItemsToTable(students);
+//         });
+//     }
+// }
