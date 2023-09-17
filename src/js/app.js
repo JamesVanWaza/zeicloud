@@ -56,7 +56,6 @@ const db = getFirestore(app);
 
 /** Constants */
 const profileForm = document.querySelector('#form');
-const readData = document.querySelector('#readData');
 const githubLogin = document.querySelector('#githubLogin');
 const dateCreated = document.querySelector("#dateCreated");
 const filesRemaining = document.querySelector("#filesRemaining");
