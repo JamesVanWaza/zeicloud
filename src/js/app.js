@@ -337,20 +337,20 @@ window.onload = function () {
     }
 }
 
-// window.onload = function () {
-//     GetAllDataOnceRealTime();
+window.onload = function () {
+    GetAllDataOnceRealTime();
 
-//     async function GetAllDataOnceRealTime() {
-//         const dbRef = collection(db, 'zeStudentsListForm');
+    async function GetAllDataOnceRealTime() {
+        const dbRef = collection(db, 'zeStudentsListForm');
 
-//         onSnapshot(dbRef, (querySnapshot1) => {
-//             var students = [];
+        onSnapshot(dbRef, (querySnapshot1) => {
+            var students = [];
 
-//             querySnapshot1.forEach(doc => {
-//                 students.push(doc.data());
-//             });
+            querySnapshot1.forEach(doc => {
+                students.push(doc.data());
+            });
 
-//             AddAllItemsToTable(students);
-//         });
-//     }
-// }
+            AddAllItemsToTable(students);
+        });
+    }
+}
