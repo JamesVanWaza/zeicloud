@@ -127,12 +127,21 @@ if (zeSubmitTheStudentsListBtn) {
 /** Admin: Firestore Edit Data */
 if (zeEditBtn) {
     async function getZeEdits() {
-        const querySnapshot2 = await getDocs(collection(db, 'zeStudentsListForm'));
-
-        updateDoc
+        const docRef2 = await updateDoc(collection(db, 'zeStudentsListForm'), {
+            'Gender': zeGender.value,
+            'NameOfStudent': zeNameOfStd.value,
+            'RollNo': zeRollNo.value,
+            'Section': zeSection.value,
+            UpdatedOn: Timestamp.fromDate(new Date()),
+        }).then(() => {
+            console.log('Document written with ID: ', docRef2.id);
+            profileForm.reset();
+        }).catch((error) => {
+            console.error('Error adding document: ', error);
+        });
     }
 
-    getZeEdits()
+    getZeEdits();
 
     /** Alerts */
     const alertPlaceholder2 = document.getElementById('liveAlertPlaceholder2');
@@ -151,7 +160,7 @@ if (zeEditBtn) {
     const alertTrigger2 = document.getElementById('zeEditBtn');
     if (alertTrigger2) {
         alertTrigger2.addEventListener('click', () => {
-            appendAlert1('The data was updated!', 'success');
+            appendAlert2('The data was updated!', 'success');
         });
     }
 
@@ -160,9 +169,19 @@ if (zeEditBtn) {
 /** Admin: Firestore Delete Data */
 if (zeDeleteBtn) {
     async function removeZeDocument() {
-        const querySnapshot2 = await getDocs(collection(db, 'zeStudentsListForm'));
-
-        deleteDoc
+        const docRef3 = await deleteDocDoc(collection(db, 'zeStudentsListForm'), {
+            'Gender': zeGender.value,
+            'NameOfStudent': zeNameOfStd.value,
+            'RollNo': zeRollNo.value,
+            'Section': zeSection.value,
+            CreatedOn: Timestamp.fromDate(new Date()),
+            UpdatedOn: Timestamp.fromDate(new Date()),
+        }).then(() => {
+            console.log('Document written with ID: ', docRef3.id);
+            profileForm.reset();
+        }).catch((error) => {
+            console.error('Error adding document: ', error);
+        });
     }
 
     removeZeDocument();
@@ -302,21 +321,21 @@ function AddAllItemsToTable(TheStudent) {
     });
 }
 
-// window.onload = function () {
-//     GetAllDataOnce();
+window.onload = function () {
+    GetAllDataOnce();
 
-//     async function GetAllDataOnce() {
-//         const querySnapshot1 = await getDocs(collection(db, 'zeStudentsListForm'));
+    async function GetAllDataOnce() {
+        const querySnapshot1 = await getDocs(collection(db, 'zeStudentsListForm'));
 
-//         var students = [];
+        var students = [];
 
-//         querySnapshot1.forEach(doc => {
-//             students.push(doc.data());
+        querySnapshot1.forEach(doc => {
+            students.push(doc.data());
 
-//             AddAllItemsToTable(students);
-//         });
-//     }
-// }
+            AddAllItemsToTable(students);
+        });
+    }
+}
 
 // window.onload = function () {
 //     GetAllDataOnceRealTime();
