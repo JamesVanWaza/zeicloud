@@ -69,8 +69,8 @@ const zeGender = document.querySelector('#zeGender');
 const zeNameOfStd = document.querySelector("#zeNameOfStd");
 const zeRollNo = document.querySelector("#zeRollNo");
 const zeSection = document.querySelector("#zeSection");
-const zeEditBtn = document.querySelector('#zeEditBtn');
-const zeDeleteBtn = document.querySelector('#zeDeleteBtn');
+const zeEditBtn = document.getElementsByClassName('#zeEditBtn');
+const zeDeleteBtn = document.getElementsByClassName('#zeDeleteBtn');
 
 /** Admin: Firestore Create Insert Data */
 if (zeSubmitTheStudentsListBtn) {
