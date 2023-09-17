@@ -64,17 +64,17 @@ const zeSubmit = document.querySelector("#zeSubmit");
 const zeSignOut = document.querySelector("#zeSignOut");
 
 /** Admin: Firestore Constants */
-const zeSubmitTheStudentsListBtn = document.querySelector('#zeSubmitTheStudentsListBtn');
+const zeCreateBtn = document.querySelector('#zeCreateBtn');
 const zeGender = document.querySelector('#zeGender');
 const zeNameOfStd = document.querySelector("#zeNameOfStd");
 const zeRollNo = document.querySelector("#zeRollNo");
 const zeSection = document.querySelector("#zeSection");
-const zeEditBtn = document.getElementsByClassName('#zeEditBtn');
-const zeDeleteBtn = document.getElementsByClassName('#zeDeleteBtn');
+const zeEditBtn = document.querySelector('.zeEditBtn');
+const zeDeleteBtn = document.querySelector('.zeDeleteBtn');
 
 /** Admin: Firestore Create Insert Data */
-if (zeSubmitTheStudentsListBtn) {
-    zeSubmitTheStudentsListBtn.addEventListener('click', (e) => {
+if (zeCreateBtn) {
+    zeCreateBtn.addEventListener('click', (e) => {
         e.preventDefault();
 
         async function saveZeStudentsFormData() {
@@ -116,7 +116,7 @@ if (zeSubmitTheStudentsListBtn) {
         alertPlaceholder1.append(wrapper1);
     };
 
-    const alertTrigger1 = document.getElementById('zeSubmitTheStudentsListBtn');
+    const alertTrigger1 = document.getElementById('zeCreateBtn');
     if (alertTrigger1) {
         alertTrigger1.addEventListener('click', () => {
             appendAlert1('The data was inserted!', 'success');
@@ -327,13 +327,15 @@ window.onload = function () {
     async function GetAllDataOnce() {
         const querySnapshot1 = await getDocs(collection(db, 'zeStudentsListForm'));
 
-        var students = [];
+        if (querySnapshot1.exists()) {
+            var students = [];
 
-        querySnapshot1.forEach(doc => {
-            students.push(doc.data());
+            querySnapshot1.forEach(doc => {
+                students.push(doc.data());
 
-            AddAllItemsToTable(students);
-        });
+                AddAllItemsToTable(students);
+            });
+        }
     }
 }
 
