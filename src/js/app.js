@@ -2,7 +2,7 @@
 import { initializeApp } from "firebase/app";
 // import { getAnalytics } from "firebase/analytics";
 import { getAuth, GithubAuthProvider, signInWithRedirect, signOut } from "firebase/auth";
-import { getFirestore, collection, addDoc, getDocs, Timestamp, onSnapshot } from "firebase/firestore";
+import { getFirestore, collection, addDoc, getDocs, Timestamp, onSnapshot, updateDoc, deleteDoc } from "firebase/firestore";
 // import { getFunctions } from "firebase/functions";
 // import { getMessaging } from "firebase/messaging";
 // import { getPerformance } from "firebase/performance";
@@ -126,12 +126,67 @@ if (zeSubmitTheStudentsListBtn) {
 
 /** Admin: Firestore Edit Data */
 if (zeEditBtn) {
+    async function getZeEdits() {
+        const querySnapshot2 = await getDocs(collection(db, 'zeStudentsListForm'));
+
+        updateDoc
+    }
+
+    getZeEdits()
+
+    /** Alerts */
+    const alertPlaceholder2 = document.getElementById('liveAlertPlaceholder2');
+    const appendAlert2 = (message, type) => {
+        const wrapper2 = document.createElement('div');
+        wrapper2.innerHTML = [
+            `<div class="alert alert-${type} alert-dismissible" role="alert">`,
+            `<div>${message}</div>`,
+            `<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>`,
+            `</div>`
+        ].join('');
+
+        alertPlaceholder2.append(wrapper2);
+    };
+
+    const alertTrigger2 = document.getElementById('zeEditBtn');
+    if (alertTrigger2) {
+        alertTrigger2.addEventListener('click', () => {
+            appendAlert1('The data was updated!', 'success');
+        });
+    }
 
 }
 
 /** Admin: Firestore Delete Data */
 if (zeDeleteBtn) {
+    async function removeZeDocument() {
+        const querySnapshot2 = await getDocs(collection(db, 'zeStudentsListForm'));
 
+        deleteDoc
+    }
+
+    removeZeDocument();
+
+    /** Alerts */
+    const alertPlaceholder3 = document.getElementById('liveAlertPlaceholder3');
+    const appendAlert3 = (message, type) => {
+        const wrapper3 = document.createElement('div');
+        wrapper3.innerHTML = [
+            `<div class="alert alert-${type} alert-dismissible" role="alert">`,
+            `<div>${message}</div>`,
+            `<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>`,
+            `</div>`
+        ].join('');
+
+        alertPlaceholder3.append(wrapper3);
+    };
+
+    const alertTrigger3 = document.getElementById('zeDeleteBtn');
+    if (alertTrigger3) {
+        alertTrigger3.addEventListener('click', () => {
+            appendAlert3('The data was deleted!', 'success');
+        });
+    }
 }
 
 // Admin Project Submit Form
