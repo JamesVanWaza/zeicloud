@@ -116,6 +116,16 @@ module.exports = {
             filename: 'admin/firestore-create.html',
             template: './src/admin/firestore-create-template.html'
         }),
+        new HtmlWebpackPlugin({
+            title: 'Firestore Edit',
+            filename: 'admin/firestore-edit.html',
+            template: './src/admin/firestore-edit-template.html'
+        }),
+        new HtmlWebpackPlugin({
+            title: 'Firestore Delete',
+            filename: 'admin/firestore-delete.html',
+            template: './src/admin/firestore-delete-template.html'
+        }),
         // Favicon
         new FaviconsWebpackPlugin({
             logo: './src/images/Z@4x.png'

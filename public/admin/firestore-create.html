@@ -36,37 +36,31 @@
     <section class="container-fluid">
         <article>
             <form id="zeStudentsListForm" class="my-5">
-                <div class="row">
+                <aside class="row mb-2">
                     <h1>Insert Data</h1>
-                    <div class="col-3">
-                        <input type="date" class="form-control" name="zeDateCreated" id="zeDateCreated"
-                            placeholder="Date Created">
-                    </div>
                     <div class="col-3">
                         <input type="text" class="form-control" name="zeGender" id="zeGender" placeholder="Gender">
                     </div>
                     <div class="col-3">
-                        <input type="number" class="form-control" name="GBRemaining" id="gBRemaining"
-                            placeholder="GB Remaining" step="0.01">
+                        <input type="text" class="form-control" name="zeNameOfStd" id="zeNameOfStd"
+                            placeholder="Name of Student">
                     </div>
                     <div class="col-3">
-                        <div id="liveAlertPlaceholder"></div>
+                        <input type="number" class="form-control" name="zeRollNo" id="zeRollNo" placeholder="Roll No">
+                    </div>
+                    <div class="col-3">
+                        <input type="text" class="form-control" name="zeSection" id="zeSection" placeholder="Section">
+                    </div>
+                </aside>
+
+                <aside class="row">
+                    <div class="d-grid gap-2">
                         <button type="submit" id="zeSubmitTheStudentsListBtn" class="btn btn-secondary">Add Files <i
                                 class="fa-solid fa-file"></i></button>
+                        <div id="liveAlertPlaceholder1"></div>
                     </div>
-                </div>
-
-                <!-- INSERT IMAGE SHOWING THE UPLOAD DATA but that will be done later
-                <input type="file" name="insertImage" id="InsertImage"> -->
+                </aside>
             </form>
-
-
-            <button type="button" id="readData" name="button" class="btn btn-outline-info">DISPLAY THE DATA</button>
-
-            <button type="button" name="button" class="btn btn-outline-warning">EDIT INSERT PENCIL FAVICON</button>
-            <button type="button" name="button" class="btn btn-outline-danger">DELETE INSERT X FAVICON</button>
-
-            <table id="myTable"></table>
         </article>
     </section>
 </body>
