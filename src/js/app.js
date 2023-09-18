@@ -76,140 +76,140 @@ const zeDeleteBtn = document.querySelector('.zeDeleteBtn');
 
 
 /** Admin: Firestore Create Insert Data */
-if (zeCreateBtn) {
-    zeCreateBtn.addEventListener('click', (e) => {
-        e.preventDefault();
+// if (zeCreateBtn) {
+//     zeCreateBtn.addEventListener('click', (e) => {
+//         e.preventDefault();
 
-        async function saveZeStudentsFormData() {
-            const docRef1 = await addDoc(collection(db, 'zeStudentsListForm'), {
-                'Gender': zeGender.value,
-                'NameOfStudent': zeNameOfStd.value,
-                'RollNo': zeRollNo.value,
-                'Section': zeSection.value,
-                CreatedOn: Timestamp.fromDate(new Date()),
-                UpdatedOn: Timestamp.fromDate(new Date()),
-            }).then(() => {
-                console.log('Document written with ID: ', docRef1.id);
-                profileForm.reset();
-            }).catch((error) => {
-                console.error('Error adding document: ', error);
-            });
-        }
+//         async function saveZeStudentsFormData() {
+//             const docRef1 = await addDoc(collection(db, 'zeStudentsListForm'), {
+//                 'Gender': zeGender.value,
+//                 'NameOfStudent': zeNameOfStd.value,
+//                 'RollNo': zeRollNo.value,
+//                 'Section': zeSection.value,
+//                 CreatedOn: Timestamp.fromDate(new Date()),
+//                 UpdatedOn: Timestamp.fromDate(new Date()),
+//             }).then(() => {
+//                 console.log('Document written with ID: ', docRef1.id);
+//                 profileForm.reset();
+//             }).catch((error) => {
+//                 console.error('Error adding document: ', error);
+//             });
+//         }
 
-        saveZeStudentsFormData();
+//         saveZeStudentsFormData();
 
-        // The Form is Reset
-        zeGender.value = '';
-        zeNameOfStd.value = '';
-        zeRollNo.value = '';
-        zeSection.value = '';
-    });
+//         // The Form is Reset
+//         zeGender.value = '';
+//         zeNameOfStd.value = '';
+//         zeRollNo.value = '';
+//         zeSection.value = '';
+//     });
 
-    /** Alerts */
-    const alertPlaceholder1 = document.getElementById('liveAlertPlaceholder1');
-    const appendAlert1 = (message, type) => {
-        const wrapper1 = document.createElement('div');
-        wrapper1.innerHTML = [
-            `<div class="alert alert-${type} alert-dismissible" role="alert">`,
-            `<div>${message}</div>`,
-            `<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>`,
-            `</div>`
-        ].join('');
+//     /** Alerts */
+//     const alertPlaceholder1 = document.getElementById('liveAlertPlaceholder1');
+//     const appendAlert1 = (message, type) => {
+//         const wrapper1 = document.createElement('div');
+//         wrapper1.innerHTML = [
+//             `<div class="alert alert-${type} alert-dismissible" role="alert">`,
+//             `<div>${message}</div>`,
+//             `<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>`,
+//             `</div>`
+//         ].join('');
 
-        alertPlaceholder1.append(wrapper1);
-    };
+//         alertPlaceholder1.append(wrapper1);
+//     };
 
-    const alertTrigger1 = document.getElementById('zeCreateBtn');
-    if (alertTrigger1) {
-        alertTrigger1.addEventListener('click', () => {
-            appendAlert1('The data was inserted!', 'success');
-        });
-    }
-}
+//     const alertTrigger1 = document.getElementById('zeCreateBtn');
+//     if (alertTrigger1) {
+//         alertTrigger1.addEventListener('click', () => {
+//             appendAlert1('The data was inserted!', 'success');
+//         });
+//     }
+// }
 
 /** Admin: Firestore Edit Data */
-if (zeEditBtn) {
-    async function getZeEdits() {
-        const docRef2 = await updateDoc(collection(db, 'zeStudentsListForm'), {
-            'Gender': zeGender.value,
-            'NameOfStudent': zeNameOfStd.value,
-            'RollNo': zeRollNo.value,
-            'Section': zeSection.value,
-            UpdatedOn: Timestamp.fromDate(new Date()),
-        }).then(() => {
-            console.log('Document written with ID: ', docRef2.id);
-            profileForm.reset();
-        }).catch((error) => {
-            console.error('Error adding document: ', error);
-        });
-    }
+// if (zeEditBtn) {
+//     async function getZeEdits() {
+//         const docRef2 = await updateDoc(collection(db, 'zeStudentsListForm'), {
+//             'Gender': zeGender.value,
+//             'NameOfStudent': zeNameOfStd.value,
+//             'RollNo': zeRollNo.value,
+//             'Section': zeSection.value,
+//             UpdatedOn: Timestamp.fromDate(new Date()),
+//         }).then(() => {
+//             console.log('Document written with ID: ', docRef2.id);
+//             profileForm.reset();
+//         }).catch((error) => {
+//             console.error('Error adding document: ', error);
+//         });
+//     }
 
-    getZeEdits();
+//     getZeEdits();
 
-    /** Alerts */
-    const alertPlaceholder2 = document.getElementById('liveAlertPlaceholder2');
-    const appendAlert2 = (message, type) => {
-        const wrapper2 = document.createElement('div');
-        wrapper2.innerHTML = [
-            `<div class="alert alert-${type} alert-dismissible" role="alert">`,
-            `<div>${message}</div>`,
-            `<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>`,
-            `</div>`
-        ].join('');
+//     /** Alerts */
+//     const alertPlaceholder2 = document.getElementById('liveAlertPlaceholder2');
+//     const appendAlert2 = (message, type) => {
+//         const wrapper2 = document.createElement('div');
+//         wrapper2.innerHTML = [
+//             `<div class="alert alert-${type} alert-dismissible" role="alert">`,
+//             `<div>${message}</div>`,
+//             `<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>`,
+//             `</div>`
+//         ].join('');
 
-        alertPlaceholder2.append(wrapper2);
-    };
+//         alertPlaceholder2.append(wrapper2);
+//     };
 
-    const alertTrigger2 = document.getElementById('zeEditBtn');
-    if (alertTrigger2) {
-        alertTrigger2.addEventListener('click', () => {
-            appendAlert2('The data was updated!', 'success');
-        });
-    }
+//     const alertTrigger2 = document.getElementById('zeEditBtn');
+//     if (alertTrigger2) {
+//         alertTrigger2.addEventListener('click', () => {
+//             appendAlert2('The data was updated!', 'success');
+//         });
+//     }
 
-}
+// }
 
 /** Admin: Firestore Delete Data */
-if (zeDeleteBtn) {
-    async function removeZeDocument() {
-        const docRef3 = await deleteDocDoc(collection(db, 'zeStudentsListForm'), {
-            'Gender': zeGender.value,
-            'NameOfStudent': zeNameOfStd.value,
-            'RollNo': zeRollNo.value,
-            'Section': zeSection.value,
-            CreatedOn: Timestamp.fromDate(new Date()),
-            UpdatedOn: Timestamp.fromDate(new Date()),
-        }).then(() => {
-            console.log('Document written with ID: ', docRef3.id);
-            profileForm.reset();
-        }).catch((error) => {
-            console.error('Error adding document: ', error);
-        });
-    }
+// if (zeDeleteBtn) {
+//     async function removeZeDocument() {
+//         const docRef3 = await deleteDocDoc(collection(db, 'zeStudentsListForm'), {
+//             'Gender': zeGender.value,
+//             'NameOfStudent': zeNameOfStd.value,
+//             'RollNo': zeRollNo.value,
+//             'Section': zeSection.value,
+//             CreatedOn: Timestamp.fromDate(new Date()),
+//             UpdatedOn: Timestamp.fromDate(new Date()),
+//         }).then(() => {
+//             console.log('Document written with ID: ', docRef3.id);
+//             profileForm.reset();
+//         }).catch((error) => {
+//             console.error('Error adding document: ', error);
+//         });
+//     }
 
-    removeZeDocument();
+//     removeZeDocument();
 
-    /** Alerts */
-    const alertPlaceholder3 = document.getElementById('liveAlertPlaceholder3');
-    const appendAlert3 = (message, type) => {
-        const wrapper3 = document.createElement('div');
-        wrapper3.innerHTML = [
-            `<div class="alert alert-${type} alert-dismissible" role="alert">`,
-            `<div>${message}</div>`,
-            `<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>`,
-            `</div>`
-        ].join('');
+//     /** Alerts */
+//     const alertPlaceholder3 = document.getElementById('liveAlertPlaceholder3');
+//     const appendAlert3 = (message, type) => {
+//         const wrapper3 = document.createElement('div');
+//         wrapper3.innerHTML = [
+//             `<div class="alert alert-${type} alert-dismissible" role="alert">`,
+//             `<div>${message}</div>`,
+//             `<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>`,
+//             `</div>`
+//         ].join('');
 
-        alertPlaceholder3.append(wrapper3);
-    };
+//         alertPlaceholder3.append(wrapper3);
+//     };
 
-    const alertTrigger3 = document.getElementById('zeDeleteBtn');
-    if (alertTrigger3) {
-        alertTrigger3.addEventListener('click', () => {
-            appendAlert3('The data was deleted!', 'success');
-        });
-    }
-}
+//     const alertTrigger3 = document.getElementById('zeDeleteBtn');
+//     if (alertTrigger3) {
+//         alertTrigger3.addEventListener('click', () => {
+//             appendAlert3('The data was deleted!', 'success');
+//         });
+//     }
+// }
 
 // Admin Project Submit Form
 if (zeSubmit) {
@@ -360,4 +360,15 @@ if (zeSignOut) {
 //     }
 // }
 
-/** WIP: Testing  */
+/** Admin: CRUD  */
+let NameBox = document.getElementById("NameBox");
+let RollBox = document.getElementById("RollBox");
+let SecBox = document.getElementById("SecBox");
+let GenBox = document.getElementById("GenBox");
+const crudForm = document.getElementById('crudForm');
+
+let InsBtn = document.getElementById('InsBtn');
+let SelBtn = document.getElementById('SelBtn');
+let UpdBtn = document.getElementById('UpdBtn');
+let DelBtn = document.getElementById('DelBtn');
+
