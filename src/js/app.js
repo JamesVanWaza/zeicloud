@@ -2,7 +2,7 @@
 import { initializeApp } from "firebase/app";
 // import { getAnalytics } from "firebase/analytics";
 import { getAuth, GithubAuthProvider, signInWithRedirect, signOut } from "firebase/auth";
-import { getFirestore, collection, addDoc, getDocs, Timestamp, onSnapshot, updateDoc, deleteDoc } from "firebase/firestore";
+import { getFirestore, collection, addDoc, getDocs, Timestamp, onSnapshot, updateDoc, deleteDoc, doc } from "firebase/firestore";
 // import { getFunctions } from "firebase/functions";
 // import { getMessaging } from "firebase/messaging";
 // import { getPerformance } from "firebase/performance";
@@ -65,6 +65,7 @@ const zeSignOut = document.querySelector("#zeSignOut");
 
 /** Admin: Firestore Constants */
 const zeCreateBtn = document.querySelector('#zeCreateBtn');
+//const zeReadBtn = document.querySelector('#zeReadBtn');
 const zeGender = document.querySelector('#zeGender');
 const zeNameOfStd = document.querySelector("#zeNameOfStd");
 const zeRollNo = document.querySelector("#zeRollNo");
@@ -356,3 +357,5 @@ window.onload = function () {
         });
     }
 }
+
+/** WIP: Testing  */
