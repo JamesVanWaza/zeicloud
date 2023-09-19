@@ -7,7 +7,7 @@ import { getFirestore, collection, addDoc, getDocs, Timestamp, onSnapshot, updat
 // import { getMessaging } from "firebase/messaging";
 // import { getPerformance } from "firebase/performance";
 // import { getRemoteConfig } from "firebase/remote-config";
-// import { getStorage } from "firebase/storage";
+import { getStorage, ref as sRef } from "firebase/storage";
 // import { initializeAppCheck, ReCaptchaV3Provider } from "firebase/app-check";
 
 const firebaseConfig = {
