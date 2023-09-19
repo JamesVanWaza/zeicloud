@@ -480,3 +480,52 @@ InsBtn.addEventListener("click", AddDocument_CustomID);
 SelBtn.addEventListener("click", GetADocument);
 UpdBtn.addEventListener("click", UpdateDocument);
 DelBtn.addEventListener("click", DeleteDocument);
+
+/** Firebase Storage */
+var files = [];
+var reader = new FileReader();
+
+var namebox = document.getElementById('namebox');
+var extlab = document.getElementById('extlab');
+var myimg = document.getElementById('myimg');
+var proglab = document.getElementById('upprogress');
+var SelBtn2 = document.getElementById('selbtn2');
+var UpBtn = document.getElementById('upbtn');
+var DownBtn = document.getElementById('downbtn');
+
+var input = document.createElement('input');
+input.type = 'file';
+
+input.onchange = e => {
+    files = e.target.files;
+
+    var extension = GetExtName(files[0]);
+    var name = GetFileName(files[0]);
+
+    namebox.value = name;
+    extlab.innerHTML = extension;
+    reader.readAsDataURL(files[0]);
+}
+
+reader.onload = function () {
+    myimg.src = reader.result;
+}
+
+/** Functions */
+SelBtn2.onclick = function () {
+    input.click();
+}
+
+function GetExtName(file) {
+    var temp = file.name.split('.');
+
+    var ext = temp.slice((temp.length - 1), (temp.length));
+    return '.' + ext[0];
+}
+
+function GetFileName(file) {
+    var temp = file.name.split('.');
+
+    var fname = temp.slice(0, -1).join('.');
+    return fname;
+}
