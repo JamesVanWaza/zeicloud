@@ -476,10 +476,18 @@ async function DeleteDocument() {
 }
 
 /** Assign Events to Btns */
-InsBtn.addEventListener("click", AddDocument_CustomID);
-SelBtn.addEventListener("click", GetADocument);
-UpdBtn.addEventListener("click", UpdateDocument);
-DelBtn.addEventListener("click", DeleteDocument);
+if (InsBtn) {
+    InsBtn.addEventListener("click", AddDocument_CustomID);
+}
+if (SelBtn) {
+    SelBtn.addEventListener("click", GetADocument);
+}
+if (UpdBtn) {
+    UpdBtn.addEventListener("click", UpdateDocument);
+}
+if (DelBtn) {
+    DelBtn.addEventListener("click", DeleteDocument);
+}
 
 /** Firebase Storage */
 var files = [];
@@ -489,7 +497,7 @@ var namebox = document.getElementById('namebox');
 var extlab = document.getElementById('extlab');
 var myimg = document.getElementById('myimg');
 var proglab = document.getElementById('upprogress');
-var SelBtn2 = document.getElementById('selbtn2');
+var SelBtn2 = document.getElementById('SelBtn2');
 var UpBtn = document.getElementById('upbtn');
 var DownBtn = document.getElementById('downbtn');
 
