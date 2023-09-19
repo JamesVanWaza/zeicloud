@@ -410,6 +410,11 @@ async function AddDocument_CustomID() {
     }).catch((error) => {
         alert("Unsuccessful operation, error" + error);
     })
+
+    /** Reset Data after Inserting */
+    NameBox.value = '';
+    RollBox.value = '';
+    SecBox.value = '';
 }
 
 /** Getting Document */
@@ -427,6 +432,46 @@ async function GetADocument() {
     }
 }
 
+/** Updating a Document */
+async function UpdateDocument() {
+    var ref = doc(db, "zeCRUDDemo", RollBox.value);
+
+    await updateDoc(
+        ref, {
+        NameOfStd: NameBox.value,
+        Section: SecBox.value,
+        Gender: GenBox.value,
+        UpdatedOn: Timestamp.fromDate(new Date()),
+    }
+    ).then(() => {
+        alert("Data Updated successfully");
+    }).catch((error) => {
+        alert("Unsuccessful operation, error" + error);
+    })
+
+}
+
+/** Deleting a Document */
+async function DeleteDocument() {
+    var ref = doc(db, "zeCRUDDemo", RollBox.value);
+
+    const docSnap2 = await getDoc(ref);
+
+    if (!docSnap2.exists()) {
+        alert("Document does not exist");
+        return;
+    }
+
+    await deleteDoc(ref)
+        .then(() => {
+            alert("Data Deleted successfully");
+        }).catch((error) => {
+            alert("Unsuccessful operation, error" + error);
+        })
+}
+
 /** Assign Events to Btns */
 InsBtn.addEventListener("click", AddDocument_CustomID);
 SelBtn.addEventListener("click", GetADocument);
+UpdBtn.addEventListener("click", UpdateDocument);
+DelBtn.addEventListener("click", DeleteDocument);
