@@ -2,7 +2,7 @@
 import { initializeApp } from "firebase/app";
 // import { getAnalytics } from "firebase/analytics";
 import { getAuth, GithubAuthProvider, signInWithRedirect, signOut } from "firebase/auth";
-import { getFirestore, collection, addDoc, getDocs, Timestamp, onSnapshot, updateDoc, deleteDoc, doc, setDoc } from "firebase/firestore";
+import { getFirestore, collection, addDoc, getDocs, Timestamp, onSnapshot, updateDoc, deleteDoc, doc, setDoc, getDoc } from "firebase/firestore";
 // import { getFunctions } from "firebase/functions";
 // import { getMessaging } from "firebase/messaging";
 // import { getPerformance } from "firebase/performance";
