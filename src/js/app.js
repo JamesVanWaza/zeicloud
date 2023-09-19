@@ -468,6 +468,11 @@ async function DeleteDocument() {
         }).catch((error) => {
             alert("Unsuccessful operation, error" + error);
         })
+
+    /** Reset Data after Deletion */
+    NameBox.value = '';
+    RollBox.value = '';
+    SecBox.value = '';
 }
 
 /** Assign Events to Btns */
