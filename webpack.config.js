@@ -131,6 +131,11 @@ module.exports = {
             filename: 'admin/firestore-crud.html',
             template: './src/admin/firestore-crud-template.html'
         }),
+        new HtmlWebpackPlugin({
+            title: 'Firebase Images',
+            filename: 'admin/image-storage.html',
+            template: './src/admin/image-storage-template.html'
+        }),
         // Favicon
         new FaviconsWebpackPlugin({
             logo: './src/images/Z@4x.png'
