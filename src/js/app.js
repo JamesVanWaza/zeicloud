@@ -2,7 +2,7 @@
 import { initializeApp } from "firebase/app";
 // import { getAnalytics } from "firebase/analytics";
 import { getAuth, GithubAuthProvider, signInWithRedirect, signOut } from "firebase/auth";
-import { getFirestore, collection, addDoc, getDocs, Timestamp, onSnapshot, updateDoc, deleteDoc, doc } from "firebase/firestore";
+import { getFirestore, collection, addDoc, getDocs, Timestamp, onSnapshot, updateDoc, deleteDoc, doc, setDoc } from "firebase/firestore";
 // import { getFunctions } from "firebase/functions";
 // import { getMessaging } from "firebase/messaging";
 // import { getPerformance } from "firebase/performance";
@@ -365,10 +365,68 @@ let NameBox = document.getElementById("NameBox");
 let RollBox = document.getElementById("RollBox");
 let SecBox = document.getElementById("SecBox");
 let GenBox = document.getElementById("GenBox");
-const crudForm = document.getElementById('crudForm');
 
 let InsBtn = document.getElementById('InsBtn');
 let SelBtn = document.getElementById('SelBtn');
 let UpdBtn = document.getElementById('UpdBtn');
 let DelBtn = document.getElementById('DelBtn');
 
+/** Adding Document with AutoID */
+// async function AddDocument_AUTOID() {
+//     var ref = collection(db, "zeCRUDDemo");
+
+//     await addDoc(
+//         ref, {
+//         NameOfStd: NameBox.value,
+//         RollNo: RollBox.value,
+//         Section: SecBox.value,
+//         Gender: GenBox.value,
+//         CreatedOn: Timestamp.fromDate(new Date()),
+//         UpdatedOn: Timestamp.fromDate(new Date()),
+//     }
+//     ).then(() => {
+//         alert("Data Added successfully");
+//     }).catch((error) => {
+//         alert("Unsuccessful operation, error" + error);
+//     })
+// }
+
+
+/** Adding Document with CustomID */
+async function AddDocument_CustomID() {
+    var ref = doc(db, "zeCRUDDemo", RollBox.value);
+
+    await setDoc(
+        ref, {
+        NameOfStd: NameBox.value,
+        RollNo: RollBox.value,
+        Section: SecBox.value,
+        Gender: GenBox.value,
+        CreatedOn: Timestamp.fromDate(new Date()),
+        UpdatedOn: Timestamp.fromDate(new Date()),
+    }
+    ).then(() => {
+        alert("Data Added successfully");
+    }).catch((error) => {
+        alert("Unsuccessful operation, error" + error);
+    })
+}
+
+/** Getting Document */
+async function GetADocument() {
+    var ref = doc(db, "zeCRUDDemo", RollBox.value);
+
+    const docSnap = await getDoc(ref);
+
+    if (docSnap.exists()) {
+        NameBox.value = docSnap.data().NameOfStd;
+        SecBox.value = docSnap.data().Section;
+        GenBox.value = docSnap.data().Gender;
+    } else {
+        alert("No such document");
+    }
+}
+
+/** Assign Events to Btns */
+InsBtn.addEventListener("click", AddDocument_CustomID);
+SelBtn.addEventListener("click", GetADocument);
