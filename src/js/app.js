@@ -564,7 +564,8 @@ async function UploadProcess() {
         },
         () => {
             getDownloadURL(UploadTask.snapshot.ref).then((downloadURL) => {
-                console.log(downloadURL);
+                // console.log(downloadURL);
+                SaveURLToFirestore(downloadURL);
             })
         }
     );
@@ -572,4 +573,18 @@ async function UploadProcess() {
 
 if (UpBtn) {
     UpBtn.onclick = UploadProcess;
+}
+
+
+/** Save URL to Firestore */
+async function SaveURLToFirestore() {
+    var name = namebox.value;
+    var ext = extlab.innerHTML;
+
+    var ref = doc(db, "ImageLinks/" + name);
+
+    await setDoc(ref, {
+        ImageName: (name + ext),
+        ImageURL: url
+    })
 }
