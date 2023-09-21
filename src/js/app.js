@@ -46,7 +46,7 @@ const db = getFirestore(app);
 //const remoteConfig = getRemoteConfig(app);
 
 // Storage
-//const storage = getStorage(app);
+const storage = getStorage(app);
 
 // Initialize App Check
 //const appCheck = initializeAppCheck(app);
@@ -548,8 +548,6 @@ async function UploadProcess() {
         contentType: ImgToUpload.type
     }
 
-    const storage = getStorage();
-
     const storageRef = sRef(storage, "Images/" + ImgName);
 
     const UploadTask = uploadBytesResumable(storageRef, ImgToUpload, metaData);
@@ -569,4 +567,6 @@ async function UploadProcess() {
     );
 }
 
-UpBtn.onclick = UploadProcess;
+if (UpBtn) {
+    UpBtn.onclick = UploadProcess;
+}
