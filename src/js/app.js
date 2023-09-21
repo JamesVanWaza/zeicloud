@@ -498,8 +498,8 @@ var extlab = document.getElementById('extlab');
 var myimg = document.getElementById('myimg');
 var proglab = document.getElementById('upprogress');
 var SelBtn2 = document.getElementById('SelBtn2');
-var UpBtn = document.getElementById('upbtn');
-var DownBtn = document.getElementById('downbtn');
+var UpBtn = document.getElementById('UpBtn');
+var DownBtn = document.getElementById('DownBtn');
 
 var input = document.createElement('input');
 input.type = 'file';
