@@ -556,7 +556,7 @@ async function UploadProcess() {
 
     UploadTask.on('state-changed', (snapshot) => {
         var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-        proglab.innerHTML = "Upload" + progress + "%";
+        proglab.innerHTML = "Upload " + progress + "%";
     },
         (error) => {
             alert("error: image not uploaded!");
