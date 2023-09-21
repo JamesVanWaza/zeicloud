@@ -560,6 +560,7 @@ async function UploadProcess() {
     },
         (error) => {
             alert("error: image not uploaded!");
+            console.log(error);
         },
         () => {
             getDownloadURL(UploadTask.snapshot.ref).then((downloadURL) => {
