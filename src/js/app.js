@@ -585,6 +585,7 @@ async function SaveURLToFirestore() {
 
     await setDoc(ref, {
         ImageName: (name + ext),
-        ImageURL: url
+        ImageURL: url,
+        CreatedOn: Timestamp.fromDate(new Date()),
     })
 }
