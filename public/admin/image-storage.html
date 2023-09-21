@@ -5,6 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>zeIcloud: Image Storage</title>
+
+    <style>
+        img {
+            width: 200px;
+            height: 200px;
+            border: 2px solid white;
+        }
+    </style>
 <link rel="icon" href="../assets/favicon.png"><script defer src="../index.js"></script><script defer src="../app.js"></script></head>
 
 <body class="d-flex flex-column h-100">
@@ -31,9 +39,17 @@
     </header>
 
     <section class="container-fluid">
-        <article>
-            <p>Starting point of any website project</p>
-        </article>
+        <label for="namebox">Image Name</label>
+        <input type="text" name="namebox" id="namebox">
+
+        <label for="" id="extlab"></label><br><br>
+        <img alt="" id="myimg">
+
+        <label for="" id="upprogress"></label><br><br>
+
+        <button type="button" id="SelBtn2" class="btn btn-outline-primary">SELECT IMAGE</button>
+        <button type="button" id="UpBtn" class="btn btn-outline-primary">UPLOAD IMAGE</button>
+        <button type="button" id="DownBtn" class="btn btn-outline-primary">RETRIEVE IMAGE</button>
     </section>
 </body>
 
