@@ -520,8 +520,10 @@ reader.onload = function () {
 }
 
 /** Functions */
-SelBtn2.onclick = function () {
-    input.click();
+if (SelBtn2) {
+    SelBtn2.onclick = function () {
+        input.click();
+    }
 }
 
 function GetExtName(file) {
