@@ -552,7 +552,7 @@ async function UploadProcess() {
 
     const UploadTask = uploadBytesResumable(storageRef, ImgToUpload, metaData);
 
-    UploadTask.on('state_changed', (snapshot) => {
+    UploadTask.on('state-changed', (snapshot) => {
         var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
         proglab.innerHTML = "Upload" + progress + "%";
     },
