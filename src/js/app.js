@@ -7,7 +7,7 @@ import { getFirestore, collection, addDoc, getDocs, Timestamp, onSnapshot, updat
 // import { getMessaging } from "firebase/messaging";
 // import { getPerformance } from "firebase/performance";
 // import { getRemoteConfig } from "firebase/remote-config";
-import { getStorage, ref as sRef } from "firebase/storage";
+import { getDownloadURL, getStorage, ref as sRef, uploadBytesResumable } from "firebase/storage";
 // import { initializeAppCheck, ReCaptchaV3Provider } from "firebase/app-check";
 
 const firebaseConfig = {
@@ -537,3 +537,36 @@ function GetFileName(file) {
     var fname = temp.slice(0, -1).join('.');
     return fname;
 }
+
+/** Upload Process */
+async function UploadProcess() {
+    var ImgToUpload = files[0];
+
+    var ImgName = namebox.value + extlab.innerHTML;
+
+    const metaData = {
+        contentType: ImgToUpload.type
+    }
+
+    const storage = getStorage();
+
+    const storageRef = sRef(storage, "Images/" + ImgName);
+
+    const UploadTask = uploadBytesResumable(storageRef, ImgToUpload, metaData);
+
+    UploadTask.on('state_changed', (snapshot) => {
+        var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+        proglab.innerHTML = "Upload" + progress + "%";
+    },
+        (error) => {
+            alert("error: image not uploaded!");
+        },
+        () => {
+            getDownloadURL(UploadTask.snapshot.ref).then((downloadURL) => {
+                console.log(downloadURL);
+            })
+        }
+    );
+}
+
+UpBtn.onclick = UploadProcess;
