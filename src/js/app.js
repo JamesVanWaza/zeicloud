@@ -571,21 +571,20 @@ async function UploadProcess() {
     );
 }
 
-if (UpBtn) {
-    UpBtn.onclick = UploadProcess;
-}
-
-
 /** Save URL to Firestore */
-async function SaveURLToFirestore() {
+async function SaveURLToFirestore(url) {
     var name = namebox.value;
     var ext = extlab.innerHTML;
 
-    var ref = doc(db, "ImageLinks/" + name);
+    var ref = doc(db, "ZeImageLinks/" + name);
 
     await setDoc(ref, {
         ImageName: (name + ext),
         ImageURL: url,
         CreatedOn: Timestamp.fromDate(new Date()),
     })
+}
+
+if (UpBtn) {
+    UpBtn.onclick = UploadProcess;
 }
