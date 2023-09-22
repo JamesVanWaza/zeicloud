@@ -585,6 +585,23 @@ async function SaveURLToFirestore(url) {
     })
 }
 
+/** Get Images From Firestore */
+async function GetImageFromFirestore() {
+    var name = namebox.value;
+
+    var ref = doc(db, "ZeImageLinks/" + name);
+
+    const docSnap3 = await getDoc(ref);
+
+    if (docSnap3.exists()) {
+        myimg.src = docSnap3.data().ImageURL;
+    }
+}
+
 if (UpBtn) {
     UpBtn.onclick = UploadProcess;
+}
+
+if (DownBtn) {
+    DownBtn.GetImageFromFirestore;
 }
