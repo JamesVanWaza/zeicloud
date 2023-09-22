@@ -603,5 +603,5 @@ if (UpBtn) {
 }
 
 if (DownBtn) {
-    DownBtn.GetImageFromFirestore;
+    DownBtn.onclick = GetImageFromFirestore;
 }
