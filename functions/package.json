@@ -1,6 +1,6 @@
 {
     "name": "zeicloud-functions",
-    "version": "2024.8.2",
+    "version": "2025.8.3",
     "description": "Cloud Functions for Firebase",
     "scripts": {
         "lint": "eslint",
@@ -11,7 +11,7 @@
         "logs": "firebase functions:log"
     },
     "engines": {
-        "node": "24"
+        "node": "22"
     },
     "dependencies": {
         "firebase-functions": "^6.4.0"
