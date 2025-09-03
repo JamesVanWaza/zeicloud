@@ -6,7 +6,7 @@
         "url": "git+https://github.com/jamesvanwaza/zeicloud.git"
     },
     "dependencies": {
-        "@fortawesome/fontawesome-free": "^7.0.0",
+        "@fortawesome/fontawesome-free": "^7.0.1",
         "@popperjs/core": "^2.11.8",
         "bootstrap": "^5.3.7",
         "firebase": "^12.1.0"
