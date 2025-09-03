@@ -1,15 +1,15 @@
 {
     "name": "zeicloud",
-    "version": "2025.8.3",
+    "version": "2025.9.4",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/jamesvanwaza/zeicloud.git"
     },
     "dependencies": {
-        "@fortawesome/fontawesome-free": "^7.0.0",
+        "@fortawesome/fontawesome-free": "^7.0.1",
         "@popperjs/core": "^2.11.8",
-        "bootstrap": "^5.3.7",
-        "firebase": "^12.1.0"
+        "bootstrap": "^5.3.8",
+        "firebase": "^12.2.1"
     },
     "devDependencies": {
         "@babel/core": "7.28.3",
@@ -19,7 +19,7 @@
         "extract-loader": "^5.1.0",
         "favicons-webpack-plugin": "^6.0.1",
         "html-webpack-plugin": "^5.6.4",
-        "sass": "^1.90.0",
+        "sass": "^1.92.0",
         "sass-loader": "^16.0.5",
         "style-loader": "^4.0.0",
         "webpack": "^5.101.3",
