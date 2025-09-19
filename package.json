@@ -9,7 +9,7 @@
         "@fortawesome/fontawesome-free": "^7.0.1",
         "@popperjs/core": "^2.11.8",
         "bootstrap": "^5.3.8",
-        "firebase": "^12.2.1"
+        "firebase": "^12.3.0"
     },
     "devDependencies": {
         "@babel/core": "7.28.4",
